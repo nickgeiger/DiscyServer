@@ -14,5 +14,5 @@ echo "rsync -rv --update nick@nickgeiger.com:${server_archive_dir}archive-* $loc
 rsync -rv --update nick@nickgeiger.com:${server_archive_dir}archive-* $local_archive_dir
 
 echo "ssh nick@nickgeiger.com \"rm -rf ${server_archive_dir}archive-*\""
-echo "ssh nick@nickgeiger.com \"rm -rf ${server_archive_dir}archive-*\""
+ssh nick@nickgeiger.com "rm -rf ${server_archive_dir}archive-*"
 
