@@ -14,7 +14,16 @@ fi
 
 # Source = Published Maps Dir
 #source="zsource/" # TEST
-source= "~/apps/nickgeiger/api/discy/publish-course-map/published-maps/" # Make sure the trailing slash is included
+source="/home/nick/apps/nickgeiger/api/discy/publish-course-map/published-maps/" # Make sure the trailing slash is included
+
+echo "Archiving: $source"
+echo "Destination: $dest"
+
+# Check if there are any JSON files in the source directory
+if ! find "$source" -name "*.json" -print0 | grep -q .; then # grep -q suppresses output, exits with 0 if match, 1 if no match
+  echo "Error: No JSON files found in source directory '$source'." >&2
+  exit 1
+fi
 
 # Loop through JSON and move to an archive folder dest preserving old dir structure
 find "$source" -name "*.json" -print0 | while IFS= read -r -d $'\0' file; do
