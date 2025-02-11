@@ -1,0 +1,6 @@
+{
+    "configUrl": "https://www.nickgeiger.com/api/discy/config.json",
+    "coursesUrl": "https://www.nickgeiger.com/api/discy/courses.json",
+    "courseMapsUri": "https://www.nickgeiger.com/api/discy/course-maps/",
+    "publishCourseMapsUrl": "https://www.nickgeiger.com/api/discy/publish-course-map/"
+}

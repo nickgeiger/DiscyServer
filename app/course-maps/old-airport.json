@@ -1,0 +1,462 @@
+{
+  "course": {
+    "name": "Old Airport",
+    "locationName": "Au Gres, MI",
+    "holeCount": 20,
+    "latitude": 44.052542,
+    "longitude": -83.699384,
+    "courseId": "old-airport"
+  },
+  "holes": [
+    {
+      "name": "1",
+      "tees": [
+        {
+          "latitude": 44.05258,
+          "longitude": -83.699199,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.053,
+                  "longitude": -83.698862
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.053167,
+          "longitude": -83.698367
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "2",
+      "tees": [
+        {
+          "latitude": 44.053232,
+          "longitude": -83.698852,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.053551,
+                  "longitude": -83.698598
+                },
+                {
+                  "latitude": 44.053617,
+                  "longitude": -83.698604
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.053725,
+          "longitude": -83.698358
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "3",
+      "tees": [
+        {
+          "latitude": 44.054179,
+          "longitude": -83.698357
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.055092,
+          "longitude": -83.696835
+        }
+      ],
+      "par": 4
+    },
+    {
+      "name": "4",
+      "tees": [
+        {
+          "latitude": 44.055345,
+          "longitude": -83.697217
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.054664,
+          "longitude": -83.697967
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "5",
+      "tees": [
+        {
+          "latitude": 44.054502,
+          "longitude": -83.69817
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.054283,
+          "longitude": -83.698648
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "6",
+      "tees": [
+        {
+          "latitude": 44.053924,
+          "longitude": -83.698387,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.053932,
+                  "longitude": -83.699081
+                },
+                {
+                  "latitude": 44.05393,
+                  "longitude": -83.699175
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.053719,
+          "longitude": -83.699535
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "7",
+      "tees": [
+        {
+          "latitude": 44.053628,
+          "longitude": -83.699204,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.053264,
+                  "longitude": -83.699198
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.052978,
+          "longitude": -83.699313
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "8",
+      "tees": [
+        {
+          "latitude": 44.053296,
+          "longitude": -83.699483,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.053774,
+                  "longitude": -83.700332
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.05406,
+          "longitude": -83.7003
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "9",
+      "tees": [
+        {
+          "latitude": 44.054325,
+          "longitude": -83.700877,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.055097,
+                  "longitude": -83.702077
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.055256,
+          "longitude": -83.702805
+        }
+      ],
+      "par": 4
+    },
+    {
+      "name": "10",
+      "tees": [
+        {
+          "latitude": 44.055159,
+          "longitude": -83.702956
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.054638,
+          "longitude": -83.702582
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "11",
+      "tees": [
+        {
+          "latitude": 44.054805,
+          "longitude": -83.702197,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.054508,
+                  "longitude": -83.702132
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.054485,
+          "longitude": -83.702123
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "12",
+      "tees": [
+        {
+          "latitude": 44.054259,
+          "longitude": -83.702439
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.054541,
+          "longitude": -83.703065
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "13",
+      "tees": [
+        {
+          "latitude": 44.054439,
+          "longitude": -83.703333
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.053602,
+          "longitude": -83.703246
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "14",
+      "tees": [
+        {
+          "latitude": 44.053594,
+          "longitude": -83.703238
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.05281,
+          "longitude": -83.703484
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "15",
+      "tees": [
+        {
+          "latitude": 44.052827,
+          "longitude": -83.703272
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.052475,
+          "longitude": -83.703533
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "16",
+      "tees": [
+        {
+          "latitude": 44.052353,
+          "longitude": -83.703153
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.05309,
+          "longitude": -83.702571
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "17",
+      "tees": [
+        {
+          "latitude": 44.053381,
+          "longitude": -83.702753
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.05346,
+          "longitude": -83.702078
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "18",
+      "tees": [
+        {
+          "latitude": 44.053537,
+          "longitude": -83.702022
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.054093,
+          "longitude": -83.702738
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "19",
+      "tees": [
+        {
+          "latitude": 44.054198,
+          "longitude": -83.702144
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.05357,
+          "longitude": -83.70134
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "20",
+      "tees": [
+        {
+          "latitude": 44.053808,
+          "longitude": -83.700664
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.052476,
+          "longitude": -83.699678
+        }
+      ],
+      "par": 4
+    }
+  ],
+  "layouts": [
+    {
+	"name": "Pro",
+	"holes": [
+	  {"holeIndex": 0, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 1, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 2, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 3, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 4, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 5, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 6, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 7, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 8, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 9, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 10, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 11, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 12, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 13, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 14, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 15, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 16, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 17, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 18, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 19, "teeIndex": 0, "pinIndex": 0}
+	]
+    },
+    {
+	"name": "Am",
+	"holes": [
+	  {"holeIndex": 0, "teeIndex": 0, "pinIndex": 0, "par": 4},
+	  {"holeIndex": 1, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 2, "teeIndex": 0, "pinIndex": 0, "par": 5},
+	  {"holeIndex": 3, "teeIndex": 0, "pinIndex": 0, "par": 4},
+	  {"holeIndex": 4, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 5, "teeIndex": 0, "pinIndex": 0, "par": 4},
+	  {"holeIndex": 6, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 7, "teeIndex": 0, "pinIndex": 0, "par": 4},
+	  {"holeIndex": 8, "teeIndex": 0, "pinIndex": 0, "par": 5},
+	  {"holeIndex": 9, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 10, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 11, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 12, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 13, "teeIndex": 0, "pinIndex": 0, "par": 4},
+	  {"holeIndex": 14, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 15, "teeIndex": 0, "pinIndex": 0, "par": 5},
+	  {"holeIndex": 16, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 17, "teeIndex": 0, "pinIndex": 0, "par": 4},
+	  {"holeIndex": 18, "teeIndex": 0, "pinIndex": 0, "par": 4},
+	  {"holeIndex": 19, "teeIndex": 0, "pinIndex": 0, "par": 5}
+	]
+    }
+  ]
+}

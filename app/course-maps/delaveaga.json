@@ -1,0 +1,993 @@
+{
+  "course": {
+    "name": "DeLaveaga",
+    "locationName": "Santa Cruz, CA",
+    "holeCount": 29,
+    "latitude": 37.005329,
+    "longitude": -121.99591,
+    "courseId": "delaveaga"
+  },
+  "holes": [
+    {
+      "name": "1",
+      "tees": [
+        {
+          "latitude": 37.005004,
+          "longitude": -121.996884
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.005697,
+          "longitude": -121.997487,
+          "name": "B"
+        },
+        {
+          "latitude": 37.005573,
+          "longitude": -121.997433,
+          "name": "A"
+        },
+        {
+          "latitude": 37.005587,
+          "longitude": -121.997658,
+          "name": "C"
+        },
+        {
+          "latitude": 37.005729,
+          "longitude": -121.997655,
+          "name": "D"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "2",
+      "tees": [
+        {
+          "latitude": 37.005543,
+          "longitude": -121.997037,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 37.005816,
+                  "longitude": -121.997236
+                }
+              ]
+            },
+            "1": {
+              "doglegs": [
+                {
+                  "latitude": 37.005854,
+                  "longitude": -121.997273
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.006008,
+          "longitude": -121.997649,
+          "name": "B"
+        },
+        {
+          "latitude": 37.00596,
+          "longitude": -121.997796,
+          "name": "A"
+        },
+        {
+          "latitude": 37.006126,
+          "longitude": -121.99748,
+          "name": "C"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "3",
+      "tees": [
+        {
+          "latitude": 37.00575,
+          "longitude": -121.997905,
+          "toPinSettings": {
+            "1": {
+              "par": 4,
+              "doglegs": [
+                {
+                  "latitude": 37.004752,
+                  "longitude": -121.998018
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.00482,
+          "longitude": -121.998017,
+          "name": "A"
+        },
+        {
+          "latitude": 37.004422,
+          "longitude": -121.99705,
+          "name": "Masters Cup"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "4",
+      "tees": [
+        {
+          "latitude": 37.004792,
+          "longitude": -121.998344
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.00445,
+          "longitude": -121.997341,
+          "name": "A"
+        },
+        {
+          "latitude": 37.004425,
+          "longitude": -121.99705,
+          "name": "B"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "5",
+      "tees": [
+        {
+          "latitude": 37.004477,
+          "longitude": -121.99691
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.005083,
+          "longitude": -121.99745,
+          "name": "A"
+        },
+        {
+          "latitude": 37.005223,
+          "longitude": -121.99745,
+          "name": "B"
+        },
+        {
+          "latitude": 37.005701,
+          "longitude": -121.997492,
+          "name": "Masters Cup"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "6",
+      "tees": [
+        {
+          "latitude": 37.004925,
+          "longitude": -121.997772
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.004644,
+          "longitude": -121.996547,
+          "name": "B"
+        },
+        {
+          "latitude": 37.004782,
+          "longitude": -121.996505,
+          "name": "A"
+        },
+        {
+          "latitude": 37.004698,
+          "longitude": -121.996352,
+          "name": "C"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "7",
+      "tees": [
+        {
+          "latitude": 37.004271,
+          "longitude": -121.996605,
+          "toPinSettings": {
+            "2": {
+              "doglegs": [
+                {
+                  "latitude": 37.003628,
+                  "longitude": -121.996648
+                }
+              ]
+            },
+            "3": {
+              "par": 4,
+              "doglegs": [
+                {
+                  "latitude": 37.003176,
+                  "longitude": -121.996581
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.003417,
+          "longitude": -121.99651,
+          "name": "A"
+        },
+        {
+          "latitude": 37.00319,
+          "longitude": -121.996579,
+          "name": "C"
+        },
+        {
+          "latitude": 37.003438,
+          "longitude": -121.996936,
+          "name": "B"
+        },
+        {
+          "latitude": 37.003038,
+          "longitude": -121.996889,
+          "name": "D"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "8",
+      "tees": [
+        {
+          "latitude": 37.003746,
+          "longitude": -121.996231,
+          "toPinSettings": {
+            "1": {
+              "par": 4,
+              "doglegs": [
+                {
+                  "latitude": 37.002827,
+                  "longitude": -121.995741
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.002874,
+          "longitude": -121.995726,
+          "name": "A"
+        },
+        {
+          "latitude": 37.002303,
+          "longitude": -121.996291,
+          "name": "Masters Cup"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "8A",
+      "tees": [
+        {
+          "latitude": 37.002741,
+          "longitude": -121.995844,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 37.002368,
+                  "longitude": -121.996162
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.002306,
+          "longitude": -121.99629,
+          "name": "B"
+        },
+        {
+          "latitude": 37.002265,
+          "longitude": -121.99621,
+          "name": "A"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "9",
+      "tees": [
+        {
+          "latitude": 37.002073,
+          "longitude": -121.996728,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 37.001428,
+                  "longitude": -121.997268
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.001339,
+          "longitude": -121.99738,
+          "name": "B"
+        },
+        {
+          "latitude": 37.001286,
+          "longitude": -121.997234,
+          "name": "A"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "10",
+      "tees": [
+        {
+          "latitude": 37.001361,
+          "longitude": -121.997077
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.0021,
+          "longitude": -121.996288,
+          "name": "B"
+        },
+        {
+          "latitude": 37.001993,
+          "longitude": -121.996409,
+          "name": "A"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "11",
+      "tees": [
+        {
+          "latitude": 37.001733,
+          "longitude": -121.996216,
+          "toPinSettings": {
+            "2": {
+              "doglegs": [
+                {
+                  "latitude": 37.001235,
+                  "longitude": -121.996568
+                }
+              ]
+            },
+            "3": {
+              "par": 4,
+              "doglegs": [
+                {
+                  "latitude": 37.001071,
+                  "longitude": -121.996674
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.00091,
+          "longitude": -121.996934,
+          "name": "B"
+        },
+        {
+          "latitude": 37.000882,
+          "longitude": -121.996831,
+          "name": "C"
+        },
+        {
+          "latitude": 37.001023,
+          "longitude": -121.996714,
+          "name": "A"
+        },
+        {
+          "latitude": 37.000796,
+          "longitude": -121.996714,
+          "name": "D"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "12",
+      "tees": [
+        {
+          "latitude": 37.000954,
+          "longitude": -121.99634,
+          "toPinSettings": {
+            "1": {
+              "doglegs": [
+                {
+                  "latitude": 37.001326,
+                  "longitude": -121.99608
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.001251,
+          "longitude": -121.995224,
+          "name": "C"
+        },
+        {
+          "latitude": 37.001332,
+          "longitude": -121.995819,
+          "name": "B"
+        },
+        {
+          "latitude": 37.001364,
+          "longitude": -121.996099,
+          "name": "A"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "13",
+      "tees": [
+        {
+          "latitude": 37.001654,
+          "longitude": -121.995818,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 37.00155,
+                  "longitude": -121.994589
+                }
+              ]
+            },
+            "2": {
+              "par": 4,
+              "doglegs": [
+                {
+                  "latitude": 37.001551,
+                  "longitude": -121.994597
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.001841,
+          "longitude": -121.994057,
+          "name": "A"
+        },
+        {
+          "latitude": 37.001437,
+          "longitude": -121.994365,
+          "name": "B"
+        },
+        {
+          "latitude": 37.001947,
+          "longitude": -121.993926,
+          "name": "C"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "14",
+      "tees": [
+        {
+          "latitude": 37.002016,
+          "longitude": -121.993518,
+          "toPinSettings": {
+            "4": {
+              "par": 4,
+              "doglegs": [
+                {
+                  "latitude": 37.001268,
+                  "longitude": -121.993972
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.001453,
+          "longitude": -121.993903,
+          "name": "A"
+        },
+        {
+          "latitude": 37.001332,
+          "longitude": -121.993941,
+          "name": "B"
+        },
+        {
+          "latitude": 37.001252,
+          "longitude": -121.994078,
+          "name": "C"
+        },
+        {
+          "latitude": 37.001075,
+          "longitude": -121.994035,
+          "name": "D"
+        },
+        {
+          "latitude": 37.000955,
+          "longitude": -121.993884,
+          "name": "E"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "15",
+      "tees": [
+        {
+          "latitude": 37.000616,
+          "longitude": -121.993995
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.001115,
+          "longitude": -121.994755,
+          "name": "A"
+        },
+        {
+          "latitude": 37.001158,
+          "longitude": -121.995061,
+          "name": "C"
+        },
+        {
+          "latitude": 37.001195,
+          "longitude": -121.994898,
+          "name": "B"
+        },
+        {
+          "latitude": 37.001254,
+          "longitude": -121.995228,
+          "name": "Masters Cup"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "16",
+      "tees": [
+        {
+          "latitude": 37.001231,
+          "longitude": -121.994663
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.002065,
+          "longitude": -121.995791,
+          "name": "B"
+        },
+        {
+          "latitude": 37.001888,
+          "longitude": -121.995966,
+          "name": "A"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "17",
+      "tees": [
+        {
+          "latitude": 37.002102,
+          "longitude": -121.996002
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.002505,
+          "longitude": -121.995415,
+          "name": "A"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "18",
+      "tees": [
+        {
+          "latitude": 37.002612,
+          "longitude": -121.9955,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 37.003051,
+                  "longitude": -121.995372
+                }
+              ]
+            },
+            "1": {
+              "doglegs": [
+                {
+                  "latitude": 37.003058,
+                  "longitude": -121.995349
+                }
+              ]
+            },
+            "2": {
+              "doglegs": [
+                {
+                  "latitude": 37.002962,
+                  "longitude": -121.995392
+                }
+              ]
+            },
+            "3": {
+              "doglegs": [
+                {
+                  "latitude": 37.002963,
+                  "longitude": -121.995338
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.003308,
+          "longitude": -121.995518,
+          "name": "C"
+        },
+        {
+          "latitude": 37.003432,
+          "longitude": -121.995548,
+          "name": "D"
+        },
+        {
+          "latitude": 37.00313,
+          "longitude": -121.994995,
+          "name": "B"
+        },
+        {
+          "latitude": 37.003151,
+          "longitude": -121.994919,
+          "name": "A"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "19",
+      "tees": [
+        {
+          "latitude": 37.003324,
+          "longitude": -121.995694,
+          "toPinSettings": {
+            "1": {
+              "doglegs": [
+                {
+                  "latitude": 37.003821,
+                  "longitude": -121.996006
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.003949,
+          "longitude": -121.995975,
+          "name": "A"
+        },
+        {
+          "latitude": 37.004097,
+          "longitude": -121.996257,
+          "name": "B"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "20",
+      "tees": [
+        {
+          "latitude": 37.004994,
+          "longitude": -121.996064,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 37.004839,
+                  "longitude": -121.995158
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.004533,
+          "longitude": -121.994974,
+          "name": "A"
+        },
+        {
+          "latitude": 37.004746,
+          "longitude": -121.99471,
+          "name": "B"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "21",
+      "tees": [
+        {
+          "latitude": 37.00434,
+          "longitude": -121.994871
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.004097,
+          "longitude": -121.994266,
+          "name": "A"
+        },
+        {
+          "latitude": 37.004071,
+          "longitude": -121.994189,
+          "name": "B"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "22",
+      "tees": [
+        {
+          "latitude": 37.004424,
+          "longitude": -121.994697,
+          "toPinSettings": {
+            "1": {
+              "par": 4,
+              "doglegs": [
+                {
+                  "latitude": 37.004824,
+                  "longitude": -121.995096
+                },
+                {
+                  "latitude": 37.005379,
+                  "longitude": -121.995276
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.005172,
+          "longitude": -121.995434,
+          "name": "A"
+        },
+        {
+          "latitude": 37.005772,
+          "longitude": -121.995663,
+          "name": "Masters Cup"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "23",
+      "tees": [
+        {
+          "latitude": 37.005463,
+          "longitude": -121.995699
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.005127,
+          "longitude": -121.994543,
+          "name": "B"
+        },
+        {
+          "latitude": 37.005366,
+          "longitude": -121.994547,
+          "name": "A"
+        },
+        {
+          "latitude": 37.005249,
+          "longitude": -121.99438,
+          "name": "C"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "24",
+      "tees": [
+        {
+          "latitude": 37.005536,
+          "longitude": -121.994824
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.005732,
+          "longitude": -121.995763,
+          "name": "B"
+        },
+        {
+          "latitude": 37.005758,
+          "longitude": -121.995649,
+          "name": "A"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "25",
+      "tees": [
+        {
+          "latitude": 37.005611,
+          "longitude": -121.996406,
+          "toPinSettings": {
+            "2": {
+              "doglegs": [
+                {
+                  "latitude": 37.006398,
+                  "longitude": -121.996516
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.006297,
+          "longitude": -121.996368,
+          "name": "A"
+        },
+        {
+          "latitude": 37.006549,
+          "longitude": -121.996546,
+          "name": "B"
+        },
+        {
+          "latitude": 37.006599,
+          "longitude": -121.996746,
+          "name": "C"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "26",
+      "tees": [
+        {
+          "latitude": 37.006663,
+          "longitude": -121.996516,
+          "toPinSettings": {
+            "1": {
+              "doglegs": [
+                {
+                  "latitude": 37.007162,
+                  "longitude": -121.996601
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.007288,
+          "longitude": -121.996627,
+          "name": "A"
+        },
+        {
+          "latitude": 37.00741,
+          "longitude": -121.996475,
+          "name": "B"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "26A",
+      "tees": [
+        {
+          "latitude": 37.007551,
+          "longitude": -121.996555
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.00669,
+          "longitude": -121.997104,
+          "name": "A"
+        },
+        {
+          "latitude": 37.006406,
+          "longitude": -121.997285,
+          "name": "B"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "27",
+      "tees": [
+        {
+          "latitude": 37.006175,
+          "longitude": -121.99729,
+          "toPinSettings": {
+            "3": {
+              "par": 4,
+              "doglegs": [
+                {
+                  "latitude": 37.00503,
+                  "longitude": -121.996355
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.005345,
+          "longitude": -121.996595,
+          "name": "A"
+        },
+        {
+          "latitude": 37.005061,
+          "longitude": -121.996384,
+          "name": "B"
+        },
+        {
+          "latitude": 37.004936,
+          "longitude": -121.996357,
+          "name": "C"
+        },
+        {
+          "latitude": 37.004694,
+          "longitude": -121.996346,
+          "name": "Masters Cup"
+        }
+      ],
+      "par": 3
+    }
+  ]
+}

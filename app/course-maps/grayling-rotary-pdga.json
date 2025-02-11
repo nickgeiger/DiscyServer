@@ -1,0 +1,585 @@
+{
+  "course": {
+    "name": "Grayling Rotary - PDGA",
+    "locationName": "Grayling, MI",
+    "holeCount": 24,
+    "latitude": 44.645311,
+    "longitude": -84.752837,
+    "courseId": "grayling-rotary-pdga"
+  },
+  "holes": [
+    {
+      "name": "1",
+      "tees": [
+        {
+          "latitude": 44.645128,
+          "longitude": -84.752347,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.644577,
+                  "longitude": -84.752254
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.644277,
+          "longitude": -84.751805
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "2",
+      "tees": [
+        {
+          "latitude": 44.644653,
+          "longitude": -84.75184
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.644293,
+          "longitude": -84.750933
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "3",
+      "tees": [
+        {
+          "latitude": 44.644058,
+          "longitude": -84.751226
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.643733,
+          "longitude": -84.752327
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "4",
+      "tees": [
+        {
+          "latitude": 44.643517,
+          "longitude": -84.751686
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.642602,
+          "longitude": -84.751789
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "5",
+      "tees": [
+        {
+          "latitude": 44.642195,
+          "longitude": -84.752079,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.642182,
+                  "longitude": -84.75302
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.642023,
+          "longitude": -84.753228
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "6",
+      "tees": [
+        {
+          "latitude": 44.641744,
+          "longitude": -84.752437,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.641604,
+                  "longitude": -84.753163
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.641393,
+          "longitude": -84.753295
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "7",
+      "tees": [
+        {
+          "latitude": 44.641538,
+          "longitude": -84.753419,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.64142,
+                  "longitude": -84.754275
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.641547,
+          "longitude": -84.754432
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "8",
+      "tees": [
+        {
+          "latitude": 44.641646,
+          "longitude": -84.755054,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.642173,
+                  "longitude": -84.755311
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.642202,
+          "longitude": -84.755621
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "9",
+      "tees": [
+        {
+          "latitude": 44.642087,
+          "longitude": -84.755992
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.64146,
+          "longitude": -84.756915
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "10",
+      "tees": [
+        {
+          "latitude": 44.641313,
+          "longitude": -84.757129,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.642201,
+                  "longitude": -84.757295
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.642224,
+          "longitude": -84.757253
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "11",
+      "tees": [
+        {
+          "latitude": 44.642576,
+          "longitude": -84.757284
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.64325,
+          "longitude": -84.756191
+        }
+      ],
+      "par": 4
+    },
+    {
+      "name": "12",
+      "tees": [
+        {
+          "latitude": 44.643326,
+          "longitude": -84.755536
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.644195,
+          "longitude": -84.757268
+        }
+      ],
+      "par": 4
+    },
+    {
+      "name": "13",
+      "tees": [
+        {
+          "latitude": 44.643766,
+          "longitude": -84.757113
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.643605,
+          "longitude": -84.758967
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "14",
+      "tees": [
+        {
+          "latitude": 44.643984,
+          "longitude": -84.758692,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.644669,
+                  "longitude": -84.759391
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.644609,
+          "longitude": -84.759901
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "A",
+      "tees": [
+        {
+          "latitude": 44.644271,
+          "longitude": -84.760041
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.644423,
+          "longitude": -84.761234
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "B",
+      "tees": [
+        {
+          "latitude": 44.644532,
+          "longitude": -84.761707,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.644195,
+                  "longitude": -84.76165
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.644034,
+          "longitude": -84.761821
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "C",
+      "tees": [
+        {
+          "latitude": 44.643991,
+          "longitude": -84.762385,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.644338,
+                  "longitude": -84.762899
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.644701,
+          "longitude": -84.762883
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "D",
+      "tees": [
+        {
+          "latitude": 44.645295,
+          "longitude": -84.762444,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.645364,
+                  "longitude": -84.761707
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.645424,
+          "longitude": -84.76171
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "E",
+      "tees": [
+        {
+          "latitude": 44.645496,
+          "longitude": -84.7611,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.645629,
+                  "longitude": -84.760508
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.645406,
+          "longitude": -84.759517
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "15",
+      "tees": [
+        {
+          "latitude": 44.64525,
+          "longitude": -84.759183
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.645302,
+          "longitude": -84.757814
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "16",
+      "tees": [
+        {
+          "latitude": 44.644961,
+          "longitude": -84.75717
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.645021,
+          "longitude": -84.756447
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "17",
+      "tees": [
+        {
+          "latitude": 44.644629,
+          "longitude": -84.755848
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.643878,
+          "longitude": -84.755433
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "18",
+      "tees": [
+        {
+          "latitude": 44.642879,
+          "longitude": -84.754791,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.642937,
+                  "longitude": -84.75373
+                },
+                {
+                  "latitude": 44.643076,
+                  "longitude": -84.752714
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.643165,
+          "longitude": -84.752619
+        }
+      ],
+      "par": 4
+    },
+    {
+      "name": "19",
+      "tees": [
+        {
+          "latitude": 44.643301,
+          "longitude": -84.753148,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 44.64399,
+                  "longitude": -84.752761
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 44.644163,
+          "longitude": -84.75287
+        }
+      ],
+      "par": 3
+    }
+  ],
+  "layouts": [
+    {
+	"name": "Main",
+	"holes": [
+	  {"holeIndex": 0, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 1, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 2, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 3, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 4, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 5, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 6, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 7, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 8, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 9, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 10, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 11, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 12, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 13, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 19, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 20, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 21, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 22, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 23, "teeIndex": 0, "pinIndex": 0},
+	]
+    },
+    {
+	"name": "Full Course",
+	"holes": [
+	  {"holeIndex": 0, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 1, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 2, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 3, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 4, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 5, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 6, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 7, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 8, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 9, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 10, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 11, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 12, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 13, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 14, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 15, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 16, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 17, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 18, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 19, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 20, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 21, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 22, "teeIndex": 0, "pinIndex": 0},
+	  {"holeIndex": 23, "teeIndex": 0, "pinIndex": 0},
+	]
+    }
+  ]
+}
