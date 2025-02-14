@@ -1,0 +1,188 @@
+{
+  "course": {
+    "locationName": "San Leandro, CA",
+    "name": "Chabot Park",
+    "courseId": "chabot-park",
+    "longitude": -122.131783,
+    "latitude": 37.7318
+  },
+  "layouts": [
+    {
+      "holes": [
+        {
+          "teeIndex": 0,
+          "pinIndex": 0,
+          "holeIndex": 0
+        },
+        {
+          "teeIndex": 0,
+          "pinIndex": 0,
+          "holeIndex": 1
+        },
+        {
+          "holeIndex": 2,
+          "teeIndex": 0,
+          "pinIndex": 0
+        },
+        {
+          "holeIndex": 3,
+          "teeIndex": 0,
+          "pinIndex": 0
+        },
+        {
+          "teeIndex": 0,
+          "holeIndex": 4,
+          "pinIndex": 0
+        },
+        {
+          "pinIndex": 0,
+          "holeIndex": 5,
+          "teeIndex": 0
+        },
+        {
+          "pinIndex": 0,
+          "teeIndex": 0,
+          "holeIndex": 6
+        },
+        {
+          "holeIndex": 7,
+          "teeIndex": 0,
+          "pinIndex": 0
+        },
+        {
+          "holeIndex": 8,
+          "pinIndex": 0,
+          "teeIndex": 0
+        }
+      ]
+    }
+  ],
+  "holes": [
+    {
+      "pins": [
+        {
+          "latitude": 37.73000305522035,
+          "longitude": -122.12923689756741
+        }
+      ],
+      "tees": [
+        {
+          "longitude": -122.13001736192392,
+          "latitude": 37.730562104894645
+        }
+      ]
+    },
+    {
+      "tees": [
+        {
+          "latitude": 37.729805829038725,
+          "longitude": -122.12919968191733
+        }
+      ],
+      "pins": [
+        {
+          "longitude": -122.12974869657506,
+          "latitude": 37.73025438658695
+        }
+      ]
+    },
+    {
+      "pins": [
+        {
+          "latitude": 37.73002178877394,
+          "longitude": -122.13009813811827
+        }
+      ],
+      "tees": [
+        {
+          "longitude": -122.12951204653949,
+          "latitude": 37.72988718718672
+        }
+      ]
+    },
+    {
+      "tees": [
+        {
+          "latitude": 37.7300531097905,
+          "longitude": -122.13021670146314
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.730443440412984,
+          "longitude": -122.13080020632795
+        }
+      ]
+    },
+    {
+      "pins": [
+        {
+          "longitude": -122.13160478521337,
+          "latitude": 37.73107753138791
+        }
+      ],
+      "tees": [
+        {
+          "longitude": -122.13130166687516,
+          "latitude": 37.730602249836316
+        }
+      ]
+    },
+    {
+      "tees": [
+        {
+          "latitude": 37.73167088631343,
+          "longitude": -122.13182707328548
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 37.73171929180423,
+          "longitude": -122.13077682081808
+        }
+      ]
+    },
+    {
+      "pins": [
+        {
+          "latitude": 37.73131578698556,
+          "longitude": -122.13107144471456
+        }
+      ],
+      "tees": [
+        {
+          "latitude": 37.73154447206014,
+          "longitude": -122.13048537659611
+        }
+      ]
+    },
+    {
+      "tees": [
+        {
+          "latitude": 37.731143438922174,
+          "longitude": -122.13105693501612
+        }
+      ],
+      "pins": [
+        {
+          "longitude": -122.13034071039608,
+          "latitude": 37.73116181142431
+        }
+      ]
+    },
+    {
+      "pins": [
+        {
+          "latitude": 37.73057436574052,
+          "longitude": -122.12962690752198
+        }
+      ],
+      "tees": [
+        {
+          "longitude": -122.13024594853954,
+          "latitude": 37.73107264057074
+        }
+      ]
+    }
+  ]
+}
