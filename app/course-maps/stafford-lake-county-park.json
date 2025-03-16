@@ -1,0 +1,1498 @@
+{
+  "course": {
+    "name": "Stafford Lake County Park",
+    "locationName": "Novato, CA",
+    "holeCount": 18,
+    "latitude": 38.11273,
+    "longitude": -122.65319,
+    "courseId": "stafford-lake-county-park"
+  },
+  "holes": [
+    {
+      "name": "1",
+      "tees": [
+        {
+          "latitude": 38.108776,
+          "longitude": -122.655961,
+          "toPinSettings": {
+            "2": {
+              "par": 4
+            },
+            "3": {
+              "par": 4
+            },
+            "4": {
+              "par": 4
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 38.108627,
+          "longitude": -122.654673,
+          "name": "B"
+        },
+        {
+          "latitude": 38.1084,
+          "longitude": -122.65502,
+          "name": "A"
+        },
+        {
+          "latitude": 38.108504,
+          "longitude": -122.654425,
+          "name": "D"
+        },
+        {
+          "latitude": 38.108325,
+          "longitude": -122.654397,
+          "name": "E"
+        },
+        {
+          "latitude": 38.108253,
+          "longitude": -122.654579,
+          "name": "C"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "2",
+      "tees": [
+        {
+          "latitude": 38.108492,
+          "longitude": -122.654232
+        },
+        {
+          "latitude": 38.108329,
+          "longitude": -122.653733,
+          "name": "Short",
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 38.108258,
+                  "longitude": -122.653269
+                },
+                {
+                  "latitude": 38.108251,
+                  "longitude": -122.653226
+                },
+                {
+                  "latitude": 38.108241,
+                  "longitude": -122.653182
+                },
+                {
+                  "latitude": 38.108231,
+                  "longitude": -122.653138
+                },
+                {
+                  "latitude": 38.108216,
+                  "longitude": -122.653093
+                },
+                {
+                  "latitude": 38.108195,
+                  "longitude": -122.653054
+                },
+                {
+                  "latitude": 38.108173,
+                  "longitude": -122.653029
+                },
+                {
+                  "latitude": 38.108153,
+                  "longitude": -122.65301
+                }
+              ]
+            },
+            "1": {
+              "doglegs": [
+                {
+                  "latitude": 38.108335,
+                  "longitude": -122.653469
+                },
+                {
+                  "latitude": 38.108332,
+                  "longitude": -122.653379
+                },
+                {
+                  "latitude": 38.108322,
+                  "longitude": -122.653332
+                },
+                {
+                  "latitude": 38.108299,
+                  "longitude": -122.653285
+                },
+                {
+                  "latitude": 38.108267,
+                  "longitude": -122.653257
+                },
+                {
+                  "latitude": 38.108241,
+                  "longitude": -122.653255
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 38.108129,
+          "longitude": -122.652998,
+          "name": "C"
+        },
+        {
+          "latitude": 38.108218,
+          "longitude": -122.653267,
+          "name": "A"
+        },
+        {
+          "latitude": 38.108287,
+          "longitude": -122.653024,
+          "name": "B"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "3",
+      "tees": [
+        {
+          "latitude": 38.108296,
+          "longitude": -122.652499,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 38.10789,
+                  "longitude": -122.651583
+                },
+                {
+                  "latitude": 38.107817,
+                  "longitude": -122.651432
+                },
+                {
+                  "latitude": 38.107744,
+                  "longitude": -122.651296
+                },
+                {
+                  "latitude": 38.107709,
+                  "longitude": -122.651244
+                },
+                {
+                  "latitude": 38.107672,
+                  "longitude": -122.651199
+                },
+                {
+                  "latitude": 38.107636,
+                  "longitude": -122.65117
+                },
+                {
+                  "latitude": 38.1076,
+                  "longitude": -122.651148
+                },
+                {
+                  "latitude": 38.107566,
+                  "longitude": -122.65113
+                }
+              ]
+            },
+            "2": {
+              "par": 3
+            },
+            "3": {
+              "par": 3
+            },
+            "4": {
+              "par": 3,
+              "doglegs": [
+                {
+                  "latitude": 38.107859,
+                  "longitude": -122.651325
+                },
+                {
+                  "latitude": 38.107828,
+                  "longitude": -122.651227
+                },
+                {
+                  "latitude": 38.107819,
+                  "longitude": -122.651166
+                },
+                {
+                  "latitude": 38.107826,
+                  "longitude": -122.651101
+                }
+              ]
+            }
+          }
+        },
+        {
+          "latitude": 38.108478,
+          "longitude": -122.652994,
+          "name": "Long",
+          "toPinSettings": {
+            "1": {
+              "par": 5,
+              "doglegs": [
+                {
+                  "latitude": 38.107657,
+                  "longitude": -122.651064
+                },
+                {
+                  "latitude": 38.107626,
+                  "longitude": -122.650985
+                },
+                {
+                  "latitude": 38.107598,
+                  "longitude": -122.650903
+                },
+                {
+                  "latitude": 38.107571,
+                  "longitude": -122.650812
+                }
+              ]
+            },
+            "2": {
+              "doglegs": [
+                {
+                  "latitude": 38.107673,
+                  "longitude": -122.651435
+                },
+                {
+                  "latitude": 38.107649,
+                  "longitude": -122.6514
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 38.107532,
+          "longitude": -122.651124,
+          "name": "D"
+        },
+        {
+          "latitude": 38.107551,
+          "longitude": -122.650718,
+          "name": "E"
+        },
+        {
+          "latitude": 38.107618,
+          "longitude": -122.651373,
+          "name": "B"
+        },
+        {
+          "latitude": 38.107837,
+          "longitude": -122.651355,
+          "name": "A"
+        },
+        {
+          "latitude": 38.107841,
+          "longitude": -122.651044,
+          "name": "C"
+        }
+      ],
+      "par": 4
+    },
+    {
+      "name": "4",
+      "tees": [
+        {
+          "latitude": 38.107394,
+          "longitude": -122.651422,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 38.107499,
+                  "longitude": -122.652014
+                }
+              ]
+            },
+            "2": {
+              "doglegs": [
+                {
+                  "latitude": 38.107518,
+                  "longitude": -122.652048
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 38.107488,
+          "longitude": -122.652159,
+          "name": "A"
+        },
+        {
+          "latitude": 38.107719,
+          "longitude": -122.652159,
+          "name": "B"
+        },
+        {
+          "latitude": 38.1073,
+          "longitude": -122.652283,
+          "name": "C"
+        },
+        {
+          "latitude": 38.107594,
+          "longitude": -122.652335,
+          "name": "D"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "5",
+      "tees": [
+        {
+          "latitude": 38.107205,
+          "longitude": -122.651982,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 38.107157,
+                  "longitude": -122.651001
+                },
+                {
+                  "latitude": 38.107162,
+                  "longitude": -122.650975
+                },
+                {
+                  "latitude": 38.107174,
+                  "longitude": -122.650953
+                },
+                {
+                  "latitude": 38.107192,
+                  "longitude": -122.650941
+                }
+              ]
+            },
+            "3": {
+              "doglegs": [
+                {
+                  "latitude": 38.107079,
+                  "longitude": -122.651059
+                },
+                {
+                  "latitude": 38.10706,
+                  "longitude": -122.650983
+                },
+                {
+                  "latitude": 38.107027,
+                  "longitude": -122.650915
+                },
+                {
+                  "latitude": 38.106992,
+                  "longitude": -122.650871
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 38.107207,
+          "longitude": -122.650935,
+          "name": "B"
+        },
+        {
+          "latitude": 38.107063,
+          "longitude": -122.650663,
+          "name": "D"
+        },
+        {
+          "latitude": 38.107139,
+          "longitude": -122.650978,
+          "name": "A"
+        },
+        {
+          "latitude": 38.106957,
+          "longitude": -122.650838,
+          "name": "C"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "6",
+      "tees": [
+        {
+          "latitude": 38.1065,
+          "longitude": -122.6511,
+          "name": "Long"
+        },
+        {
+          "latitude": 38.106677,
+          "longitude": -122.650579
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 38.107496,
+          "longitude": -122.649602,
+          "name": "C"
+        },
+        {
+          "latitude": 38.107657,
+          "longitude": -122.650075,
+          "name": "B"
+        },
+        {
+          "latitude": 38.107344,
+          "longitude": -122.649672,
+          "name": "A"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "7",
+      "tees": [
+        {
+          "latitude": 38.107661,
+          "longitude": -122.650243,
+          "name": "Left"
+        },
+        {
+          "latitude": 38.107332,
+          "longitude": -122.649815,
+          "name": "Right"
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 38.107964,
+          "longitude": -122.649397,
+          "name": "C"
+        },
+        {
+          "latitude": 38.107946,
+          "longitude": -122.649691,
+          "name": "L-A/R-B"
+        },
+        {
+          "latitude": 38.108084,
+          "longitude": -122.649128,
+          "name": "D"
+        },
+        {
+          "latitude": 38.107797,
+          "longitude": -122.6494,
+          "name": "L-B/R-A"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "8",
+      "tees": [
+        {
+          "latitude": 38.107368,
+          "longitude": -122.648814
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 38.106552,
+          "longitude": -122.648606,
+          "name": "B"
+        },
+        {
+          "latitude": 38.106535,
+          "longitude": -122.64902,
+          "name": "C"
+        },
+        {
+          "latitude": 38.106588,
+          "longitude": -122.648744,
+          "name": "A"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "9",
+      "tees": [
+        {
+          "latitude": 38.106808,
+          "longitude": -122.648403
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 38.109459,
+          "longitude": -122.648143,
+          "name": "A"
+        },
+        {
+          "latitude": 38.10991,
+          "longitude": -122.648529,
+          "name": "C"
+        },
+        {
+          "latitude": 38.109602,
+          "longitude": -122.648188,
+          "name": "B"
+        }
+      ],
+      "par": 5
+    },
+    {
+      "name": "10",
+      "tees": [
+        {
+          "latitude": 38.110265,
+          "longitude": -122.648275
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 38.109926,
+          "longitude": -122.649,
+          "name": "A"
+        },
+        {
+          "latitude": 38.109877,
+          "longitude": -122.649237,
+          "name": "B"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "11",
+      "tees": [
+        {
+          "latitude": 38.109814,
+          "longitude": -122.649442,
+          "name": "Long",
+          "toPinSettings": {
+            "1": {
+              "doglegs": [
+                {
+                  "latitude": 38.10962,
+                  "longitude": -122.649031
+                },
+                {
+                  "latitude": 38.109606,
+                  "longitude": -122.649007
+                },
+                {
+                  "latitude": 38.109598,
+                  "longitude": -122.648984
+                },
+                {
+                  "latitude": 38.109593,
+                  "longitude": -122.648963
+                },
+                {
+                  "latitude": 38.109595,
+                  "longitude": -122.648943
+                },
+                {
+                  "latitude": 38.109593,
+                  "longitude": -122.648925
+                },
+                {
+                  "latitude": 38.109594,
+                  "longitude": -122.648911
+                },
+                {
+                  "latitude": 38.109592,
+                  "longitude": -122.648894
+                },
+                {
+                  "latitude": 38.109593,
+                  "longitude": -122.648874
+                },
+                {
+                  "latitude": 38.10959,
+                  "longitude": -122.648855
+                },
+                {
+                  "latitude": 38.109579,
+                  "longitude": -122.648837
+                },
+                {
+                  "latitude": 38.109564,
+                  "longitude": -122.64882
+                },
+                {
+                  "latitude": 38.109548,
+                  "longitude": -122.648807
+                },
+                {
+                  "latitude": 38.109529,
+                  "longitude": -122.648792
+                },
+                {
+                  "latitude": 38.109515,
+                  "longitude": -122.648776
+                },
+                {
+                  "latitude": 38.109507,
+                  "longitude": -122.648765
+                },
+                {
+                  "latitude": 38.109501,
+                  "longitude": -122.648753
+                },
+                {
+                  "latitude": 38.109495,
+                  "longitude": -122.648742
+                },
+                {
+                  "latitude": 38.109493,
+                  "longitude": -122.64873
+                },
+                {
+                  "latitude": 38.109491,
+                  "longitude": -122.648718
+                },
+                {
+                  "latitude": 38.109492,
+                  "longitude": -122.648708
+                },
+                {
+                  "latitude": 38.109494,
+                  "longitude": -122.648698
+                },
+                {
+                  "latitude": 38.109497,
+                  "longitude": -122.648692
+                },
+                {
+                  "latitude": 38.109502,
+                  "longitude": -122.648684
+                }
+              ]
+            },
+            "2": {
+              "doglegs": [
+                {
+                  "latitude": 38.109621,
+                  "longitude": -122.649027
+                },
+                {
+                  "latitude": 38.109604,
+                  "longitude": -122.64899
+                },
+                {
+                  "latitude": 38.109591,
+                  "longitude": -122.64896
+                },
+                {
+                  "latitude": 38.10958,
+                  "longitude": -122.64893
+                },
+                {
+                  "latitude": 38.109572,
+                  "longitude": -122.648901
+                },
+                {
+                  "latitude": 38.109566,
+                  "longitude": -122.64886
+                },
+                {
+                  "latitude": 38.10956,
+                  "longitude": -122.648815
+                },
+                {
+                  "latitude": 38.109549,
+                  "longitude": -122.648783
+                },
+                {
+                  "latitude": 38.109533,
+                  "longitude": -122.648752
+                },
+                {
+                  "latitude": 38.109515,
+                  "longitude": -122.648726
+                },
+                {
+                  "latitude": 38.109498,
+                  "longitude": -122.648697
+                },
+                {
+                  "latitude": 38.109483,
+                  "longitude": -122.648663
+                },
+                {
+                  "latitude": 38.109475,
+                  "longitude": -122.648627
+                },
+                {
+                  "latitude": 38.109477,
+                  "longitude": -122.648594
+                },
+                {
+                  "latitude": 38.109481,
+                  "longitude": -122.64858
+                }
+              ]
+            }
+          }
+        },
+        {
+          "latitude": 38.10983,
+          "longitude": -122.64911
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 38.10955,
+          "longitude": -122.648831,
+          "name": "A"
+        },
+        {
+          "latitude": 38.10951,
+          "longitude": -122.648673,
+          "name": "B"
+        },
+        {
+          "latitude": 38.109486,
+          "longitude": -122.648567,
+          "name": "C"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "12",
+      "tees": [
+        {
+          "latitude": 38.109285,
+          "longitude": -122.648745,
+          "toPinSettings": {
+            "4": {
+              "par": 4
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 38.109661,
+          "longitude": -122.649707,
+          "name": "B"
+        },
+        {
+          "latitude": 38.1098,
+          "longitude": -122.649694,
+          "name": "C"
+        },
+        {
+          "latitude": 38.109488,
+          "longitude": -122.649539,
+          "name": "A"
+        },
+        {
+          "latitude": 38.109595,
+          "longitude": -122.649977,
+          "name": "D"
+        },
+        {
+          "latitude": 38.109475,
+          "longitude": -122.650494,
+          "name": "E"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "13",
+      "tees": [
+        {
+          "latitude": 38.109417,
+          "longitude": -122.649825,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 38.108885,
+                  "longitude": -122.649468
+                },
+                {
+                  "latitude": 38.10884,
+                  "longitude": -122.649422
+                },
+                {
+                  "latitude": 38.108808,
+                  "longitude": -122.649356
+                },
+                {
+                  "latitude": 38.10879,
+                  "longitude": -122.649286
+                }
+              ]
+            },
+            "3": {
+              "par": 4
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 38.108794,
+          "longitude": -122.649214,
+          "name": "A"
+        },
+        {
+          "latitude": 38.108359,
+          "longitude": -122.64982,
+          "name": "B"
+        },
+        {
+          "latitude": 38.108299,
+          "longitude": -122.649988,
+          "name": "C"
+        },
+        {
+          "latitude": 38.108027,
+          "longitude": -122.649889,
+          "name": "D"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "14",
+      "tees": [
+        {
+          "latitude": 38.107447,
+          "longitude": -122.650363,
+          "name": "Long",
+          "toPinSettings": {
+            "1": {
+              "doglegs": [
+                {
+                  "latitude": 38.108098,
+                  "longitude": -122.650412
+                },
+                {
+                  "latitude": 38.108153,
+                  "longitude": -122.65042
+                },
+                {
+                  "latitude": 38.108211,
+                  "longitude": -122.650436
+                },
+                {
+                  "latitude": 38.108271,
+                  "longitude": -122.650451
+                },
+                {
+                  "latitude": 38.108337,
+                  "longitude": -122.650467
+                },
+                {
+                  "latitude": 38.108399,
+                  "longitude": -122.650469
+                },
+                {
+                  "latitude": 38.108458,
+                  "longitude": -122.65046
+                },
+                {
+                  "latitude": 38.108522,
+                  "longitude": -122.650439
+                },
+                {
+                  "latitude": 38.108593,
+                  "longitude": -122.650416
+                },
+                {
+                  "latitude": 38.108666,
+                  "longitude": -122.650407
+                },
+                {
+                  "latitude": 38.108739,
+                  "longitude": -122.650407
+                },
+                {
+                  "latitude": 38.108816,
+                  "longitude": -122.650417
+                },
+                {
+                  "latitude": 38.108891,
+                  "longitude": -122.650436
+                },
+                {
+                  "latitude": 38.108963,
+                  "longitude": -122.650464
+                }
+              ]
+            }
+          }
+        },
+        {
+          "latitude": 38.108367,
+          "longitude": -122.650238,
+          "toPinSettings": {
+            "0": {
+              "par": 3
+            },
+            "1": {
+              "par": 3
+            },
+            "2": {
+              "par": 3
+            },
+            "4": {
+              "par": 3
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 38.108981,
+          "longitude": -122.651103,
+          "name": "C"
+        },
+        {
+          "latitude": 38.109023,
+          "longitude": -122.650498,
+          "name": "A"
+        },
+        {
+          "latitude": 38.109237,
+          "longitude": -122.651184,
+          "name": "D"
+        },
+        {
+          "latitude": 38.109512,
+          "longitude": -122.651008,
+          "name": "E"
+        },
+        {
+          "latitude": 38.109063,
+          "longitude": -122.650687,
+          "name": "B"
+        }
+      ],
+      "par": 4
+    },
+    {
+      "name": "15",
+      "tees": [
+        {
+          "latitude": 38.10919,
+          "longitude": -122.651356,
+          "toPinSettings": {
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 38.108872,
+                  "longitude": -122.651546
+                },
+                {
+                  "latitude": 38.108837,
+                  "longitude": -122.651575
+                },
+                {
+                  "latitude": 38.108814,
+                  "longitude": -122.651603
+                },
+                {
+                  "latitude": 38.108798,
+                  "longitude": -122.651634
+                },
+                {
+                  "latitude": 38.108788,
+                  "longitude": -122.651667
+                },
+                {
+                  "latitude": 38.108782,
+                  "longitude": -122.651699
+                },
+                {
+                  "latitude": 38.108783,
+                  "longitude": -122.651733
+                }
+              ]
+            },
+            "1": {
+              "doglegs": [
+                {
+                  "latitude": 38.108867,
+                  "longitude": -122.651585
+                },
+                {
+                  "latitude": 38.108826,
+                  "longitude": -122.651625
+                },
+                {
+                  "latitude": 38.108792,
+                  "longitude": -122.651673
+                },
+                {
+                  "latitude": 38.108772,
+                  "longitude": -122.651727
+                },
+                {
+                  "latitude": 38.108764,
+                  "longitude": -122.651788
+                },
+                {
+                  "latitude": 38.108767,
+                  "longitude": -122.651847
+                },
+                {
+                  "latitude": 38.108781,
+                  "longitude": -122.651901
+                },
+                {
+                  "latitude": 38.108803,
+                  "longitude": -122.651951
+                },
+                {
+                  "latitude": 38.108819,
+                  "longitude": -122.651981
+                }
+              ]
+            },
+            "3": {
+              "doglegs": [
+                {
+                  "latitude": 38.10887,
+                  "longitude": -122.651592
+                },
+                {
+                  "latitude": 38.108816,
+                  "longitude": -122.651645
+                },
+                {
+                  "latitude": 38.108772,
+                  "longitude": -122.651698
+                },
+                {
+                  "latitude": 38.108739,
+                  "longitude": -122.651753
+                },
+                {
+                  "latitude": 38.108712,
+                  "longitude": -122.651819
+                },
+                {
+                  "latitude": 38.108695,
+                  "longitude": -122.651884
+                },
+                {
+                  "latitude": 38.108687,
+                  "longitude": -122.651957
+                }
+              ]
+            },
+            "4": {
+              "doglegs": [
+                {
+                  "latitude": 38.108847,
+                  "longitude": -122.651552
+                },
+                {
+                  "latitude": 38.108793,
+                  "longitude": -122.6516
+                },
+                {
+                  "latitude": 38.108751,
+                  "longitude": -122.651658
+                },
+                {
+                  "latitude": 38.108722,
+                  "longitude": -122.651721
+                },
+                {
+                  "latitude": 38.108698,
+                  "longitude": -122.651797
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 38.108789,
+          "longitude": -122.651759,
+          "name": "B"
+        },
+        {
+          "latitude": 38.108836,
+          "longitude": -122.65201,
+          "name": "C"
+        },
+        {
+          "latitude": 38.1087,
+          "longitude": -122.651536,
+          "name": "A"
+        },
+        {
+          "latitude": 38.108687,
+          "longitude": -122.652099,
+          "name": "E"
+        },
+        {
+          "latitude": 38.108671,
+          "longitude": -122.6519,
+          "name": "D"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "16",
+      "tees": [
+        {
+          "latitude": 38.109102,
+          "longitude": -122.65182,
+          "toPinSettings": {
+            "3": {
+              "doglegs": [
+                {
+                  "latitude": 38.109109,
+                  "longitude": -122.652351
+                },
+                {
+                  "latitude": 38.109117,
+                  "longitude": -122.652479
+                },
+                {
+                  "latitude": 38.109133,
+                  "longitude": -122.652609
+                },
+                {
+                  "latitude": 38.109157,
+                  "longitude": -122.652729
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 38.108837,
+          "longitude": -122.652607,
+          "name": "A"
+        },
+        {
+          "latitude": 38.108691,
+          "longitude": -122.652514,
+          "name": "B"
+        },
+        {
+          "latitude": 38.108867,
+          "longitude": -122.652751,
+          "name": "C"
+        },
+        {
+          "latitude": 38.109192,
+          "longitude": -122.652848,
+          "name": "D"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "17",
+      "tees": [
+        {
+          "latitude": 38.108646,
+          "longitude": -122.652673,
+          "toPinSettings": {
+            "4": {
+              "par": 4,
+              "doglegs": [
+                {
+                  "latitude": 38.109337,
+                  "longitude": -122.65445
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 38.109118,
+          "longitude": -122.653632,
+          "name": "A"
+        },
+        {
+          "latitude": 38.109057,
+          "longitude": -122.653901,
+          "name": "B"
+        },
+        {
+          "latitude": 38.109307,
+          "longitude": -122.654231,
+          "name": "C"
+        },
+        {
+          "latitude": 38.10917,
+          "longitude": -122.654414,
+          "name": "D"
+        },
+        {
+          "latitude": 38.10926,
+          "longitude": -122.654838,
+          "name": "E"
+        }
+      ],
+      "par": 3
+    },
+    {
+      "name": "18",
+      "tees": [
+        {
+          "latitude": 38.109116,
+          "longitude": -122.65467,
+          "name": "Short"
+        },
+        {
+          "latitude": 38.109085,
+          "longitude": -122.654504,
+          "name": "Long",
+          "toPinSettings": {
+            "3": {
+              "doglegs": [
+                {
+                  "latitude": 38.109091,
+                  "longitude": -122.65466
+                },
+                {
+                  "latitude": 38.109097,
+                  "longitude": -122.65482
+                },
+                {
+                  "latitude": 38.109096,
+                  "longitude": -122.654866
+                },
+                {
+                  "latitude": 38.109094,
+                  "longitude": -122.654888
+                },
+                {
+                  "latitude": 38.109093,
+                  "longitude": -122.654911
+                },
+                {
+                  "latitude": 38.109092,
+                  "longitude": -122.654941
+                },
+                {
+                  "latitude": 38.109092,
+                  "longitude": -122.654971
+                },
+                {
+                  "latitude": 38.10909,
+                  "longitude": -122.654997
+                },
+                {
+                  "latitude": 38.109087,
+                  "longitude": -122.655022
+                },
+                {
+                  "latitude": 38.109084,
+                  "longitude": -122.655049
+                },
+                {
+                  "latitude": 38.109079,
+                  "longitude": -122.655076
+                },
+                {
+                  "latitude": 38.109073,
+                  "longitude": -122.655103
+                },
+                {
+                  "latitude": 38.109068,
+                  "longitude": -122.65513
+                },
+                {
+                  "latitude": 38.109064,
+                  "longitude": -122.655159
+                },
+                {
+                  "latitude": 38.109061,
+                  "longitude": -122.65519
+                },
+                {
+                  "latitude": 38.109058,
+                  "longitude": -122.655223
+                },
+                {
+                  "latitude": 38.109053,
+                  "longitude": -122.655252
+                },
+                {
+                  "latitude": 38.109046,
+                  "longitude": -122.65528
+                },
+                {
+                  "latitude": 38.109035,
+                  "longitude": -122.655308
+                },
+                {
+                  "latitude": 38.109026,
+                  "longitude": -122.655337
+                },
+                {
+                  "latitude": 38.109018,
+                  "longitude": -122.655362
+                },
+                {
+                  "latitude": 38.109011,
+                  "longitude": -122.655388
+                },
+                {
+                  "latitude": 38.109005,
+                  "longitude": -122.655415
+                },
+                {
+                  "latitude": 38.109,
+                  "longitude": -122.655448
+                },
+                {
+                  "latitude": 38.108998,
+                  "longitude": -122.655478
+                },
+                {
+                  "latitude": 38.108996,
+                  "longitude": -122.655507
+                },
+                {
+                  "latitude": 38.108999,
+                  "longitude": -122.655541
+                },
+                {
+                  "latitude": 38.109002,
+                  "longitude": -122.655578
+                },
+                {
+                  "latitude": 38.10901,
+                  "longitude": -122.655616
+                },
+                {
+                  "latitude": 38.109021,
+                  "longitude": -122.655654
+                }
+              ]
+            },
+            "0": {
+              "doglegs": [
+                {
+                  "latitude": 38.109067,
+                  "longitude": -122.654863
+                },
+                {
+                  "latitude": 38.109063,
+                  "longitude": -122.655016
+                },
+                {
+                  "latitude": 38.10905,
+                  "longitude": -122.655163
+                },
+                {
+                  "latitude": 38.109024,
+                  "longitude": -122.655317
+                },
+                {
+                  "latitude": 38.109013,
+                  "longitude": -122.655391
+                },
+                {
+                  "latitude": 38.108998,
+                  "longitude": -122.655471
+                },
+                {
+                  "latitude": 38.10898,
+                  "longitude": -122.655545
+                },
+                {
+                  "latitude": 38.108957,
+                  "longitude": -122.655609
+                },
+                {
+                  "latitude": 38.108928,
+                  "longitude": -122.655673
+                }
+              ]
+            },
+            "4": {
+              "doglegs": [
+                {
+                  "latitude": 38.109154,
+                  "longitude": -122.654887
+                },
+                {
+                  "latitude": 38.109167,
+                  "longitude": -122.654947
+                },
+                {
+                  "latitude": 38.109175,
+                  "longitude": -122.654993
+                },
+                {
+                  "latitude": 38.109178,
+                  "longitude": -122.655055
+                },
+                {
+                  "latitude": 38.109177,
+                  "longitude": -122.6551
+                },
+                {
+                  "latitude": 38.109174,
+                  "longitude": -122.655141
+                },
+                {
+                  "latitude": 38.109163,
+                  "longitude": -122.655183
+                },
+                {
+                  "latitude": 38.109138,
+                  "longitude": -122.655219
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "pins": [
+        {
+          "latitude": 38.108896,
+          "longitude": -122.655729,
+          "name": "C"
+        },
+        {
+          "latitude": 38.109183,
+          "longitude": -122.655416,
+          "name": "A"
+        },
+        {
+          "latitude": 38.109039,
+          "longitude": -122.655912,
+          "name": "D"
+        },
+        {
+          "latitude": 38.109037,
+          "longitude": -122.655691,
+          "name": "B"
+        },
+        {
+          "latitude": 38.109097,
+          "longitude": -122.655243
+        }
+      ],
+      "par": 3
+    }
+  ]
+}
