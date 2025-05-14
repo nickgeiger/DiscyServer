@@ -81,4 +81,8 @@ end
 # Execute the main function
 process_directory_structure
 
+# TODO:
+# Type of changes: 1) none 2) layout only (teeIndex or pinIndex) 3) holes changed (add/edit/delete tee,pin,or dogleg)
+# 1. processed & done, 2. layout candidate (or auto-publish) 3. course update candidate
+
 
