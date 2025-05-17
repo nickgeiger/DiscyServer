@@ -12,14 +12,90 @@ BASE_DIR = 'archives'
 ## Compares 2 course JSONs
 # reference_course is the current accepted course
 # candidate_course is the new course with changes to incorporate
-# Returns: :no_changes, :holes_changed, :layout_changed
+# Returns: {
+#   "result" => :no_changes, :holes_changed, :layout_changed, or :holes_and_layout_changed,
+#   "diffs" => ["description of change"...]
+# }
 def compare_course(reference_course, candidate_course)
-  puts "Comparing courses" if V
+  puts "\nComparing courses" if V
 
   # Are there any hole changes?
-  reference_course["holes"].each do |hole|
-    puts "Hole\n #{hole}" if V
+  hole_diffs = []
+
+  ref_holes = reference_course["holes"]
+  cand_holes = candidate_course["holes"]
+  if ref_holes.length != cand_holes.length
+    hc = cand_holes.length
+    puts "Hole count mismatch: reference course = #{ref_holes.length} holes; candidate course = #{hc} holes" if V
+    hole_diffs << "New course has #{hc} hole#{hc == 1 ? '' : 's'} (vs. #{ref_holes.length})"
+  else
+    hole_num = 1
+    ref_holes.zip(cand_holes).each do |ref_hole, cand_hole|
+      puts "Ref Hole\n#{JSON.pretty_generate(ref_hole)}" if V && false
+      puts "Cand Hole\n#{JSON.pretty_generate(cand_hole)}" if V && false
+      compare_hole(hole_num, ref_hole, cand_hole, hole_diffs)
+      hole_num += 1
+    end
   end
+
+  # Are there any layout changes?
+  layout_diffs = []
+  ## TODO - compare layouts
+
+  return case
+  when hole_diffs.any? && layout_diffs.any?
+    { "result" => :holes_and_layout_changed, "diffs" => hole_diffs + layout_diffs }
+  when layout_diffs.any?
+    { "result" => :layout_changed, "diffs" => layout_diffs }
+  when hole_diffs.any?
+    { "result" => :holes_changed, "diffs" => hole_diffs }
+  else
+    { "result" => :no_changes }
+  end
+end
+
+def compare_hole(hole_number, ref_hole, cand_hole, diffs)
+
+  if ref_hole["name"] != cand_hole["name"]
+    diffs << "Hole '#{ref_hole["name"] || hole_number}' renamed to '#{cand_hole["name"]}'"
+  end
+  if ref_hole["par"] != cand_hole["par"]
+    diffs << "Hole '#{ref_hole["name"] || hole_number}' set to par #{cand_hole["par"]} (vs. #{ref_hole["par"] || 'nil'})"
+  end
+  if ref_hole["distanceMeters"] != cand_hole["distanceMeters"]
+    diffs << "Hole '#{ref_hole["name"] || hole_number}' distanceMeters set to #{cand_hole["distanceMeters"]} (vs. #{ref_hole["distanceMeters"] || 'nil'})"
+  end
+
+  ### TODO: Diff tees & pins
+
+  ref_tees = ref_hole["tees"]
+  cand_tees = cand_hole["tees"]
+  if ref_tees.length != cand_tees.length
+    tc = cand_tees.length
+    puts "Tee count mismatch: reference hole = #{ref_tees.length} tees; candidate hole = #{tc} tees" if V
+    diffs << "Hole '#{ref_hole["name"] || hole_number}' has #{tc} tee#{tc == 1 ? '' : 's'} (vs #{ref_tees.length})"
+  else
+    ref_tees.zip(cand_tees).each do |ref_tee, cand_tee|
+      #### TODO: Compare lat,lon,name,toPinSettings(if pins !matched, diff could expect to be off)
+      puts "Ref Tee\n#{JSON.pretty_generate(ref_tee)}" if V && false
+      puts "Cand Tee\n#{JSON.pretty_generate(cand_tee)}" if V && false
+    end
+  end
+
+  ref_pins = ref_hole["pins"]
+  cand_pins = cand_hole["pins"]
+  if ref_pins.length != cand_pins.length
+    pc = cand_pins.length
+    puts "Pin count mismatch: reference hole = #{ref_pins.length} pins; candidate hole = #{pc} pins" if V
+    diffs << "Hole '#{ref_hole["name"] || hole_number}' has #{pc} pin#{pc == 1 ? '' : 's'} (vs #{ref_pins.length})"
+  else
+    ref_pins.zip(cand_hole["tees"]).each do |ref_tee, cand_tee|
+      #### TODO: Compare lat,lon,name
+      puts "Ref Tee\n#{JSON.pretty_generate(ref_tee)}" if V && false
+      puts "Cand Tee\n#{JSON.pretty_generate(cand_tee)}" if V && false
+    end
+  end
+
 end
 
 # Fetches latest server course and returns JSON or nil
@@ -73,14 +149,18 @@ def process_directory_structure
     
     # Verify that NUM is a timestamp (numeric)
     next unless timestamp =~ /^\d+$/
-    
+
+
+    ############# DEBUG ###########
+    ## TODO: Remove this, for debug working with 1 archive
+    next unless archive_dir == "archives/archive-1747435861"
+    ############# DEBUG ###########
+
+
     # Process each subdirectory (FOO) in this archive
     Dir.glob("#{archive_dir}/*").select { |f| File.directory?(f) }.each do |course_dir|
       directories_found += 1
       course_id = File.basename(course_dir)
-
-      ## TODO: Remove this, for debug working with 1 file
-      next unless course_dir == "archives/archive-1741301581/moraga-commons-park"
 
       # TODO: _unknown courses could be new course candidates
       if course_id == "_unknown"
@@ -102,16 +182,27 @@ def process_directory_structure
       puts "Found #{json_files.length} JSON files" if V
       
       json_files.each do |json_file|
+
+	puts "\n#{'#'*60}"*10 if V ############# DEBUG ###########
+
         candidate_course_json = parse_json_file(json_file)
         if candidate_course_json
-          json_files_processed += 1
           puts "  File contains #{candidate_course_json.keys.length} top-level keys" if V
 
-          compare_course(live_course_json, candidate_course_json)
+          result = compare_course(live_course_json, candidate_course_json)
+          puts "Comparison result:\n#{JSON.pretty_generate(result)}" if V
+
+          json_files_processed += 1
         else
           json_files_failed += 1
         end
       end
+
+      ############# DEBUG ###########
+      result = compare_course(live_course_json, {"holes" => [{"foo" => "bar"}]})
+      puts "XX Comparison result:\n#{JSON.pretty_generate(result)}" if V
+      ############# DEBUG ###########
+
     end
   end
   
