@@ -56,29 +56,31 @@ end
 
 def compare_hole(hole_number, ref_hole, cand_hole, diffs)
 
+  hole_name = ref_hole["name"] || hole_number
+
   if ref_hole["name"] != cand_hole["name"]
-    diffs << "Hole '#{ref_hole["name"] || hole_number}' renamed to '#{cand_hole["name"]}'"
+    diffs << "Hole '#{hole_name}' renamed to '#{cand_hole["name"]}'"
   end
   if ref_hole["par"] != cand_hole["par"]
-    diffs << "Hole '#{ref_hole["name"] || hole_number}' set to par #{cand_hole["par"]} (vs. #{ref_hole["par"] || 'nil'})"
+    diffs << "Hole '#{hole_name}' par set to #{cand_hole["par"]} (vs. #{ref_hole["par"] || 'nil'})"
   end
   if ref_hole["distanceMeters"] != cand_hole["distanceMeters"]
-    diffs << "Hole '#{ref_hole["name"] || hole_number}' distanceMeters set to #{cand_hole["distanceMeters"]} (vs. #{ref_hole["distanceMeters"] || 'nil'})"
+    diffs << "Hole '#{hole_name}' distanceMeters set to #{cand_hole["distanceMeters"]} (vs. #{ref_hole["distanceMeters"] || 'nil'})"
   end
-
-  ### TODO: Diff tees & pins
 
   ref_tees = ref_hole["tees"]
   cand_tees = cand_hole["tees"]
   if ref_tees.length != cand_tees.length
     tc = cand_tees.length
-    puts "Tee count mismatch: reference hole = #{ref_tees.length} tees; candidate hole = #{tc} tees" if V
-    diffs << "Hole '#{ref_hole["name"] || hole_number}' has #{tc} tee#{tc == 1 ? '' : 's'} (vs #{ref_tees.length})"
+    puts "Hole '#{hole_name}' tee count mismatch: reference = #{ref_tees.length}, candidate = #{tc}" if V
+    diffs << "Hole '#{hole_name}' has #{tc} tee#{tc == 1 ? '' : 's'} (vs. #{ref_tees.length})"
   else
+    tee_num = 1
     ref_tees.zip(cand_tees).each do |ref_tee, cand_tee|
-      #### TODO: Compare lat,lon,name,toPinSettings(if pins !matched, diff could expect to be off)
-      puts "Ref Tee\n#{JSON.pretty_generate(ref_tee)}" if V && false
-      puts "Cand Tee\n#{JSON.pretty_generate(cand_tee)}" if V && false
+      tee_name = ref_tee["name"] || tee_num
+      compare_tee_or_pin("Hole '#{hole_name}' tee '#{tee_name}'", ref_tee, cand_tee, diffs)
+      #### TODO: Compare toPinSettings(if pins !matched, diff could expect to be off)
+      tee_num += 1
     end
   end
 
@@ -86,16 +88,29 @@ def compare_hole(hole_number, ref_hole, cand_hole, diffs)
   cand_pins = cand_hole["pins"]
   if ref_pins.length != cand_pins.length
     pc = cand_pins.length
-    puts "Pin count mismatch: reference hole = #{ref_pins.length} pins; candidate hole = #{pc} pins" if V
-    diffs << "Hole '#{ref_hole["name"] || hole_number}' has #{pc} pin#{pc == 1 ? '' : 's'} (vs #{ref_pins.length})"
+    puts "Hole '#{hole_name}' pin count mismatch: reference = #{ref_pins.length}, candidate = #{pc}" if V
+    diffs << "Hole '#{hole_name}' has #{pc} pin#{pc == 1 ? '' : 's'} (vs. #{ref_pins.length})"
   else
-    ref_pins.zip(cand_hole["tees"]).each do |ref_tee, cand_tee|
-      #### TODO: Compare lat,lon,name
-      puts "Ref Tee\n#{JSON.pretty_generate(ref_tee)}" if V && false
-      puts "Cand Tee\n#{JSON.pretty_generate(cand_tee)}" if V && false
+    pin_num = 1
+    ref_pins.zip(cand_hole["pins"]).each do |ref_pin, cand_pin|
+      pin_name = ref_pin["name"] || pin_num
+      compare_tee_or_pin("Hole '#{hole_name}' pin '#{pin_name}'", ref_pin, cand_pin, diffs)
+      pin_num += 1
     end
   end
 
+end
+
+# Compares tee or pin: name, latitude, longitude
+def compare_tee_or_pin(tee_or_pin_desc, ref_tee_pin, cand_tee_pin, diffs)
+  if ref_tee_pin["name"] != cand_tee_pin["name"]
+    diffs << "#{tee_or_pin_desc} renamed to '#{cand_tee_pin["name"]}'"
+  end
+  ["latitude", "longitude"].each do |prop|
+    if ref_tee_pin[prop].round(6) != cand_tee_pin[prop].round(6)
+      diffs << "#{tee_or_pin_desc} #{prop} set to #{cand_tee_pin[prop]} (vs. #{ref_tee_pin[prop]})"
+    end
+  end
 end
 
 # Fetches latest server course and returns JSON or nil
