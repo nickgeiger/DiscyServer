@@ -40,7 +40,9 @@ def compare_course(reference_course, candidate_course)
 
   # Are there any layout changes?
   layout_diffs = []
+
   ## TODO - compare layouts
+  puts "\n#{'*'*130}\nTODO: NEXT COMPARE LAYOUTS - should be relatively straightforward\n#{'*'*130}\n"
 
   return case
   when hole_diffs.any? && layout_diffs.any?
@@ -68,6 +70,25 @@ def compare_hole(hole_number, ref_hole, cand_hole, diffs)
     diffs << "Hole '#{hole_name}' distanceMeters set to #{cand_hole["distanceMeters"]} (vs. #{ref_hole["distanceMeters"] || 'nil'})"
   end
 
+  # Compare pins first as only unchanged pins are worth comparing toPinSettings
+  prev_diff_count = diffs.length
+  ref_pins = ref_hole["pins"]
+  cand_pins = cand_hole["pins"]
+  if ref_pins.length != cand_pins.length
+    pc = cand_pins.length
+    diffs << "Hole '#{hole_name}' has #{pc} pin#{pc == 1 ? '' : 's'} (vs. #{ref_pins.length})"
+  else
+    pin_num = 1
+    ref_pins.zip(cand_hole["pins"]).each do |ref_pin, cand_pin|
+      pin_name = ref_pin["name"] || pin_num
+      compare_tee_or_pin("Hole '#{hole_name}' Pin '#{pin_name}'", ref_pin, cand_pin, diffs)
+      pin_num += 1
+    end
+  end
+  pins_changed = (prev_diff_count < diffs.length)
+  puts "Hole '#{hole_name}' - pins_changed? #{pins_changed}" if V && false
+
+  # Compare tees
   ref_tees = ref_hole["tees"]
   cand_tees = cand_hole["tees"]
   if ref_tees.length != cand_tees.length
@@ -78,24 +99,15 @@ def compare_hole(hole_number, ref_hole, cand_hole, diffs)
     tee_num = 1
     ref_tees.zip(cand_tees).each do |ref_tee, cand_tee|
       tee_name = ref_tee["name"] || tee_num
-      compare_tee_or_pin("Hole '#{hole_name}' tee '#{tee_name}'", ref_tee, cand_tee, diffs)
-      #### TODO: Compare toPinSettings(if pins !matched, diff could expect to be off)
-      tee_num += 1
-    end
-  end
+      tee_desc = "Hole '#{hole_name}' Tee '#{tee_name}'"
+      compare_tee_or_pin(tee_desc, ref_tee, cand_tee, diffs)
 
-  ref_pins = ref_hole["pins"]
-  cand_pins = cand_hole["pins"]
-  if ref_pins.length != cand_pins.length
-    pc = cand_pins.length
-    puts "Hole '#{hole_name}' pin count mismatch: reference = #{ref_pins.length}, candidate = #{pc}" if V
-    diffs << "Hole '#{hole_name}' has #{pc} pin#{pc == 1 ? '' : 's'} (vs. #{ref_pins.length})"
-  else
-    pin_num = 1
-    ref_pins.zip(cand_hole["pins"]).each do |ref_pin, cand_pin|
-      pin_name = ref_pin["name"] || pin_num
-      compare_tee_or_pin("Hole '#{hole_name}' pin '#{pin_name}'", ref_pin, cand_pin, diffs)
-      pin_num += 1
+      # Compare toPinSettings(unless pins changed, then they're expected to be off)
+      unless pins_changed
+        compare_tee_to_pin_settings(tee_desc, ref_tee, cand_tee, diffs)
+      end
+
+      tee_num += 1
     end
   end
 
@@ -104,11 +116,66 @@ end
 # Compares tee or pin: name, latitude, longitude
 def compare_tee_or_pin(tee_or_pin_desc, ref_tee_pin, cand_tee_pin, diffs)
   if ref_tee_pin["name"] != cand_tee_pin["name"]
-    diffs << "#{tee_or_pin_desc} renamed to '#{cand_tee_pin["name"]}'"
+    new_name = cand_tee_pin["name"]
+    diffs << "#{tee_or_pin_desc} renamed to #{new_name ? "'#{new_name}'" : 'nil'}"
   end
+  compare_lat_lon(tee_or_pin_desc, ref_tee_pin, cand_tee_pin, diffs)
+end
+
+def compare_lat_lon(desc, ref, cand, diffs)
   ["latitude", "longitude"].each do |prop|
-    if ref_tee_pin[prop].round(6) != cand_tee_pin[prop].round(6)
-      diffs << "#{tee_or_pin_desc} #{prop} set to #{cand_tee_pin[prop]} (vs. #{ref_tee_pin[prop]})"
+    if ref[prop].round(6) != cand[prop].round(6)
+      diffs << "#{desc} #{prop} set to #{cand[prop]} (vs. #{ref[prop]})"
+    end
+  end
+end
+
+# Compares tee to pin settings
+def compare_tee_to_pin_settings(tee_desc, ref_tee, cand_tee, diffs)
+
+  ref_to_pin_settings = ref_tee["toPinSettings"]
+  cand_to_pin_settings = cand_tee["toPinSettings"] || {}
+
+  pin_indexes = []
+  if ref_to_pin_settings
+    ref_to_pin_settings.each do |pin_index, ref_settings|
+      pin_indexes << pin_index
+      cand_settings = cand_to_pin_settings[pin_index] || {}
+      setting_desc = "#{tee_desc} to 'Pin #{pin_index.to_i+1}' [#{pin_index}]"
+
+      # name, par, distanceMeters, doglegs
+      ["name", "par", "distanceMeters"].each do |prop|
+        if ref_settings[prop] != cand_settings[prop]
+          new_val = cand_settings[prop]
+          old_val = ref_settings[prop]
+          diffs << "#{setting_desc}: #{prop} set to #{new_val ? "'#{new_val}'" : 'nil'} (vs. #{old_val ? "'#{old_val}'" : 'nil'})"
+        end
+      end
+
+      # doglegs...
+      ref_doglegs = ref_settings["doglegs"] || []
+      cand_doglegs = cand_settings["doglegs"] || []
+      if ref_doglegs.length != cand_doglegs.length
+        dc = cand_doglegs.length
+        diffs << "#{setting_desc} has #{dc} dogleg#{dc == 1 ? '' : 's'} (vs. #{ref_doglegs.length})"
+      else
+        # name, par, distanceMeters, doglegs
+        dogleg_index = 0
+        ref_doglegs.zip(cand_doglegs) do |ref_dogleg, cand_dogleg|
+          compare_lat_lon("#{setting_desc} - Dogleg[#{dogleg_index}]:", ref_dogleg, cand_dogleg, diffs)
+          dogleg_index += 1
+        end
+      end
+    end
+  end
+  cand_to_pin_settings.each do |pin_index, cand_settings|
+    if !pin_indexes.include?(pin_index)
+      ["name", "par", "distanceMeters", "doglegs"].each do |prop|
+        if cand_settings[prop]
+          val = " '#{cand_settings[prop]}'" unless prop == "doglegs"
+          diffs << "#{tee_desc} to 'Pin #{pin_index.to_i+1}' [#{pin_index}]: added #{prop}#{val}"
+        end
+      end
     end
   end
 end
@@ -156,23 +223,23 @@ def process_directory_structure
   json_files_processed = 0
   json_files_failed = 0
   
-  # Pattern matching archives/archive-NUM/FOO
+  # Pattern matching archives/archive-TIMESTAMP/COURSE_DIR
   Dir.glob("#{BASE_DIR}/archive-*").each do |archive_dir|
 
-    # Extract the timestamp (NUM)
+    # Extract the timestamp
     timestamp = archive_dir.split('-').last
     
-    # Verify that NUM is a timestamp (numeric)
+    # Verify that timestamp is numeric
     next unless timestamp =~ /^\d+$/
 
 
     ############# DEBUG ###########
     ## TODO: Remove this, for debug working with 1 archive
-    next unless archive_dir == "archives/archive-1747435861"
+    next unless archive_dir == "archives/archive-999"
     ############# DEBUG ###########
 
 
-    # Process each subdirectory (FOO) in this archive
+    # Process each subdirectory (course_id) in this archive
     Dir.glob("#{archive_dir}/*").select { |f| File.directory?(f) }.each do |course_dir|
       directories_found += 1
       course_id = File.basename(course_dir)
