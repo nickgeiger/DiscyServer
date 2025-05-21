@@ -13,47 +13,79 @@ BASE_DIR = 'archives'
 # reference_course is the current accepted course
 # candidate_course is the new course with changes to incorporate
 # Returns: {
-#   "result" => :no_changes, :holes_changed, :layout_changed, or :holes_and_layout_changed,
+#   "result" => : invalid_changes, :no_changes, :course_changed, :layout_changed, or :course_and_layout_changed,
 #   "diffs" => ["description of change"...]
 # }
 def compare_course(reference_course, candidate_course)
   puts "\nComparing courses" if V
 
-  # Are there any hole changes?
-  hole_diffs = []
+  diffs = []
 
+  # Any course info changes?
+  compare_course_info(reference_course["course"], candidate_course["course"], diffs)
+
+  # Any hole changes?
   ref_holes = reference_course["holes"]
   cand_holes = candidate_course["holes"]
   if ref_holes.length != cand_holes.length
     hc = cand_holes.length
-    puts "Hole count mismatch: reference course = #{ref_holes.length} holes; candidate course = #{hc} holes" if V
-    hole_diffs << "New course has #{hc} hole#{hc == 1 ? '' : 's'} (vs. #{ref_holes.length})"
+    diffs << "New course has #{hc} hole#{hc == 1 ? '' : 's'} (vs. #{ref_holes.length})"
   else
     hole_num = 1
     ref_holes.zip(cand_holes).each do |ref_hole, cand_hole|
-      puts "Ref Hole\n#{JSON.pretty_generate(ref_hole)}" if V && false
-      puts "Cand Hole\n#{JSON.pretty_generate(cand_hole)}" if V && false
-      compare_hole(hole_num, ref_hole, cand_hole, hole_diffs)
+      compare_hole(hole_num, ref_hole, cand_hole, diffs)
       hole_num += 1
     end
   end
 
-  # Are there any layout changes?
+  # Any layout changes?
   layout_diffs = []
 
-  ## TODO - compare layouts
-  puts "\n#{'*'*130}\nTODO: NEXT COMPARE LAYOUTS - should be relatively straightforward\n#{'*'*130}\n"
+  ref_layouts = reference_course["layouts"] || []
+  cand_layouts = candidate_course["layouts"] || []
+  sel_layout_index = candidate_course["selectedLayoutIndex"] || cand_layouts.length == 1 ? 0 : nil
+  unless cand_layouts.length > 0 && sel_layout_index && sel_layout_index < cand_layouts.length
+    layout_diffs << "Candidate course does not have a valid selected layout"
+    return { "result" => :invalid_changes, "diffs" => diffs + layout_diffs }
+  end
+
+  if ref_layouts.length < 1
+    layout_diffs << "Added initial layout"
+  elsif ref_layouts.length != cand_layouts.length
+    lc = cand_layouts.length
+    layout_diffs << "New course has #{lc} layout#{lc == 1 ? '' : 's'} (vs. #{ref_layouts.length})"
+  else
+    ref_layouts.each_with_index do |ref_layout, layout_index|
+      prev_diff_count = layout_diffs.length
+      layout_desc = "Layout '#{ ref_layout["name"] || (layout_index + 1) }'"
+      compare_layout(layout_desc, ref_layout, cand_layouts[layout_index], layout_diffs)
+      if layout_diffs.length > prev_diff_count && layout_index != sel_layout_index
+        diffs << "Changes to unplayed #{layout_desc}"
+      end
+    end
+  end
 
   return case
-  when hole_diffs.any? && layout_diffs.any?
-    { "result" => :holes_and_layout_changed, "diffs" => hole_diffs + layout_diffs }
+  when diffs.any? && layout_diffs.any?
+    { "result" => :course_and_layout_changed, "diffs" => diffs + layout_diffs }
   when layout_diffs.any?
     { "result" => :layout_changed, "diffs" => layout_diffs }
-  when hole_diffs.any?
-    { "result" => :holes_changed, "diffs" => hole_diffs }
+  when diffs.any?
+    { "result" => :course_changed, "diffs" => diffs }
   else
     { "result" => :no_changes }
   end
+end
+
+def compare_course_info(ref_course, cand_course, diffs)
+  ref_course = ref_course || {}
+  cand_course = cand_course || {}
+  ["courseId", "name"].each do |prop|
+    if ref_course[prop] != cand_course[prop]
+      diffs << "Course #{prop} set to #{cand_course[prop] || 'nil'} (vs. #{ref_course[prop] || 'nil'})"
+    end
+  end
+  compare_lat_lon("Course", ref_course, cand_course, diffs)
 end
 
 def compare_hole(hole_number, ref_hole, cand_hole, diffs)
@@ -124,8 +156,10 @@ end
 
 def compare_lat_lon(desc, ref, cand, diffs)
   ["latitude", "longitude"].each do |prop|
-    if ref[prop].round(6) != cand[prop].round(6)
-      diffs << "#{desc} #{prop} set to #{cand[prop]} (vs. #{ref[prop]})"
+    ref_val = ref[prop] ? ref[prop].round(6) : nil
+    cand_val = cand[prop] ? cand[prop].round(6) : nil
+    if ref_val != cand_val
+      diffs << "#{desc} #{prop} set to #{cand[prop] || 'nil'} (vs. #{ref[prop] || 'nil'})"
     end
   end
 end
@@ -176,6 +210,29 @@ def compare_tee_to_pin_settings(tee_desc, ref_tee, cand_tee, diffs)
           diffs << "#{tee_desc} to 'Pin #{pin_index.to_i+1}' [#{pin_index}]: added #{prop}#{val}"
         end
       end
+    end
+  end
+end
+
+def compare_layout(layout_desc, ref_layout, cand_layout, diffs)
+  if ref_layout["name"] != cand_layout["name"]
+    diffs << "#{layout_desc} renamed to '#{cand_layout["name"]}'"
+  end
+  ref_holes = ref_layout["holes"]
+  cand_holes = cand_layout["holes"]
+  if ref_holes.length != cand_holes.length
+    hc = cand_holes.length
+    diffs << "#{layout_desc} has #{hc} hole#{hc == 1 ? '' : 's'} (vs. #{ref_holes.length})"
+  else
+    hole_num = 1
+    ref_holes.zip(cand_holes).each do |ref_hole, cand_hole|
+      ["holeIndex", "teeIndex", "pinIndex"].each do |prop|
+        if ref_hole[prop] != cand_hole[prop]
+          ## TODO? Dig up hole name instead of using hole_num... candidate hole? Would need holes passed in...
+          diffs << "#{layout_desc} - Hole #{hole_num}: #{prop} set to #{cand_hole[prop] || 'nil'} (vs. #{ref_hole[prop] || 'nil'})"
+        end
+      end
+      hole_num += 1
     end
   end
 end
