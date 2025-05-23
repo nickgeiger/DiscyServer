@@ -1,12 +1,37 @@
+## This should be run from the project root directory (DiscyServer):
+## ./archive/archive.sh /Dropbox/DiscyArchives/
+
 ## -e Ensures the script dies if there's an error, important so we don't
 ## accidentally continue and nuke server archive if it wasn't backed up
 set -e
 
+# Get and validate the archive directory parameter
+dir="$1"
+if [ -z "$dir" ]; then
+    echo "Error: Please provide the archive parent dir"
+    echo "Usage: ./archive/archive.sh (archive_parent_dir)"
+    exit 1
+fi
+# Ensure trailing slash
+[[ "$dir" != */ ]] && dir="$dir/"
+if ! mkdir -p "$dir"; then
+    echo "Error: Could not verify archive parent dir: $dir"
+    exit 1
+fi
+
+## TODO
+echo "git pull"
+#git pull
+
+
+# Pull the archives
 server_archive_dir="/home/nick/discy-published-map-archives/"
-local_archive_dir="archives/"
+local_archive_dir="${dir}archives/"
 
 echo "Archiving: $server_archive_dir"
 echo "Destination: $local_archive_dir"
+
+if false; then ## TODO: REMOVE WHEN TEST RUNNING... ##################### DEBUG #################
 
 mkdir -p $local_archive_dir
 
@@ -15,4 +40,23 @@ rsync -rv --update nick@nickgeiger.com:${server_archive_dir}archive-* $local_arc
 
 echo "ssh nick@nickgeiger.com \"rm -rf ${server_archive_dir}archive-*\""
 ssh nick@nickgeiger.com "rm -rf ${server_archive_dir}archive-*"
+
+
+# Process the pulled archives
+
+fi ## TODO: REMOVE WHEN TEST RUNNING ##################### DEBUG #################
+
+echo "find $local_archive_dir* -name \"*.json\" -maxdepth 2 -mindepth 2"
+files_processed=$(find $local_archive_dir* -name "*.json" -maxdepth 2 -mindepth 2 | sed "s|$local_archive_dir||g")
+
+# ruby archive/process_archives.rb
+
+# TODO: Commit and push the changes to github
+# git add .
+echo "git commit -am \"archive/archive.sh\n$files_processed\""
+# git commit -am "archive/archive.sh\n$files_processed"
+# git push
+
+# Deploy the changes
+# ./deploy/deploy-course-maps-prod.sh
 

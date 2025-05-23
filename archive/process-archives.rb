@@ -1,3 +1,6 @@
+## This should be run from the project root directory (DiscyServer):
+## ruby archive/process_archives.rb /Dropbox/DiscyArchives/
+
 #!/usr/bin/env ruby
 require 'json'
 require 'fileutils'
@@ -7,17 +10,42 @@ require 'open-uri'
 V = true
 
 # Base directory containing the archive structure
-BASE_DIR = 'archives'
+##BASE_DIR = 'archive/archives'
+
+# Get and validate the archive directory parameter
+dir = ARGV[0]
+
+if dir.nil? || dir.strip.empty?
+  puts "Error: Please provide the archive parent dir"
+  puts "Usage: ruby archive/archive.rb (archive_parent_dir)"
+  exit 1
+end
+
+# Ensure trailing slash
+dir += '/' unless dir.end_with?('/')
+
+begin
+  FileUtils.mkdir_p(dir)
+rescue StandardError => e
+  puts "Error: Could not verify archive parent dir: #{dir}"
+  puts "Details: #{e.message}"
+  exit 1
+end
+
+BASE_DIR="#{dir}archives"
 
 ## Compares 2 course JSONs
 # reference_course is the current accepted course
 # candidate_course is the new course with changes to incorporate
 # Returns: {
-#   "result" => : invalid_changes, :no_changes, :course_changed, :layout_changed, or :course_and_layout_changed,
-#   "diffs" => ["description of change"...]
+#   "result" => :invalid_changes, :new_course, :no_changes, :course_changed, :layout_changed, or :course_and_layout_changed
+#   "diffs" => ["description of change", "another change", ...]
 # }
 def compare_course(reference_course, candidate_course)
-  puts "\nComparing courses" if V
+
+  unless reference_course
+    return { "result" => :new_course }
+  end
 
   diffs = []
 
@@ -43,17 +71,17 @@ def compare_course(reference_course, candidate_course)
 
   ref_layouts = reference_course["layouts"] || []
   cand_layouts = candidate_course["layouts"] || []
-  sel_layout_index = candidate_course["selectedLayoutIndex"] || cand_layouts.length == 1 ? 0 : nil
+  sel_layout_index = candidate_course["selectedLayoutIndex"] || (cand_layouts.length == 1 ? 0 : nil)
   unless cand_layouts.length > 0 && sel_layout_index && sel_layout_index < cand_layouts.length
     layout_diffs << "Candidate course does not have a valid selected layout"
     return { "result" => :invalid_changes, "diffs" => diffs + layout_diffs }
   end
 
   if ref_layouts.length < 1
-    layout_diffs << "Added initial layout"
+    diffs << "Added initial layout"
   elsif ref_layouts.length != cand_layouts.length
     lc = cand_layouts.length
-    layout_diffs << "New course has #{lc} layout#{lc == 1 ? '' : 's'} (vs. #{ref_layouts.length})"
+    diffs << "New course has #{lc} layout#{lc == 1 ? '' : 's'} (vs. #{ref_layouts.length})"
   else
     ref_layouts.each_with_index do |ref_layout, layout_index|
       prev_diff_count = layout_diffs.length
@@ -118,14 +146,12 @@ def compare_hole(hole_number, ref_hole, cand_hole, diffs)
     end
   end
   pins_changed = (prev_diff_count < diffs.length)
-  puts "Hole '#{hole_name}' - pins_changed? #{pins_changed}" if V && false
 
   # Compare tees
   ref_tees = ref_hole["tees"]
   cand_tees = cand_hole["tees"]
   if ref_tees.length != cand_tees.length
     tc = cand_tees.length
-    puts "Hole '#{hole_name}' tee count mismatch: reference = #{ref_tees.length}, candidate = #{tc}" if V
     diffs << "Hole '#{hole_name}' has #{tc} tee#{tc == 1 ? '' : 's'} (vs. #{ref_tees.length})"
   else
     tee_num = 1
@@ -240,7 +266,6 @@ end
 # Fetches latest server course and returns JSON or nil
 def fetch_live_course(course_id)
   url = "https://www.nickgeiger.com/api/discy/course-maps/#{course_id}.json"
-  puts "Fetching live course: #{url}" if V
   begin
     response = URI.open(url).read
     return JSON.parse(response)
@@ -257,7 +282,6 @@ def fetch_live_course(course_id)
 end
 
 def parse_json_file(file_path)
-  puts "Parsing JSON file: #{file_path}" if V
   begin
     # Read the JSON file
     json_content = File.read(file_path)
@@ -279,8 +303,14 @@ def process_directory_structure
   directories_found = 0
   json_files_processed = 0
   json_files_failed = 0
-  
-  # Pattern matching archives/archive-TIMESTAMP/COURSE_DIR
+
+  course_maps_pending_dir = "app/course-maps/_pending_/"
+  FileUtils.mkdir_p(course_maps_pending_dir)
+
+  processed_dir = "#{BASE_DIR}/_processed_/"
+  FileUtils.mkdir_p(processed_dir)
+
+  # Pattern matching archive/archives/archive-TIMESTAMP/COURSE_DIR
   Dir.glob("#{BASE_DIR}/archive-*").each do |archive_dir|
 
     # Extract the timestamp
@@ -292,7 +322,7 @@ def process_directory_structure
 
     ############# DEBUG ###########
     ## TODO: Remove this, for debug working with 1 archive
-    next unless archive_dir == "archives/archive-999"
+    next unless archive_dir == "#{BASE_DIR}/archive-999"
     ############# DEBUG ###########
 
 
@@ -307,46 +337,64 @@ def process_directory_structure
         next
       end
 
-      puts "\nProcessing course directory: #{course_dir} (timestamp: #{timestamp}, courseId: #{course_id})" if V
-
       live_course_json = fetch_live_course(course_id)
-      if live_course_json
-        puts "  live_course contains #{live_course_json.keys.length} top-level keys" if V
-      else
+      unless live_course_json
         puts "  no live_course for #{course_id}" if V
       end
       
       # Process all JSON files in this directory
       json_files = Dir.glob("#{course_dir}/*.json")
-      puts "Found #{json_files.length} JSON files" if V
       
       json_files.each do |json_file|
 
-	puts "\n#{'#'*60}"*10 if V ############# DEBUG ###########
-
         candidate_course_json = parse_json_file(json_file)
         if candidate_course_json
-          puts "  File contains #{candidate_course_json.keys.length} top-level keys" if V
 
           result = compare_course(live_course_json, candidate_course_json)
-          puts "Comparison result:\n#{JSON.pretty_generate(result)}" if V
+
+          puts "\n#{'#'*60}\nComparison result: #{json_file}\n#{JSON.pretty_generate(result)}" if V
+
+          case result["result"]
+
+            when :no_changes, :invalid_changes
+              # Nothing to do here
+              ##puts "Course has invalid changes" if V
+
+            when :layout_changed
+
+              course_file = "app/course-maps/#{course_id}.json"
+              FileUtils.cp(json_file, course_file)
+              puts "Queued layout change: #{course_file}" if V
+
+            when :new_course, :course_changed, :course_and_layout_changed
+
+              pending_course_file = "#{course_maps_pending_dir}#{course_id}.json"
+              FileUtils.cp(json_file, pending_course_file)
+
+              changes_file = "#{course_maps_pending_dir}#{course_id}.changes.json"
+              File.write(changes_file, result.to_json)
+
+              puts "Queued course change: #{pending_course_file}" if V
+          else
+            puts "Unknown result: '#{result["result"]}' for: #{json_file}"
+          end
 
           json_files_processed += 1
         else
           json_files_failed += 1
         end
       end
-
-      ############# DEBUG ###########
-      result = compare_course(live_course_json, {"holes" => [{"foo" => "bar"}]})
-      puts "XX Comparison result:\n#{JSON.pretty_generate(result)}" if V
-      ############# DEBUG ###########
-
     end
+
+    # Move the entire processed archive folder to the "done" dir
+    puts "\n### TODO: NEXT: mv #{archive_dir} #{processed_dir}"
+    ##FileUtils.mv(archive_dir, processed_dir)
+
   end
-  
+
   # Print summary
   puts "\n=== Processing Complete ==="
+  puts "Processed archive directory: #{BASE_DIR}"
   puts "Directories processed: #{directories_found}"
   puts "JSON files successfully processed: #{json_files_processed}"
   puts "JSON files failed to process: #{json_files_failed}"
@@ -354,9 +402,3 @@ end
 
 # Execute the main function
 process_directory_structure
-
-# TODO:
-# Type of changes: 1) none 2) layout only (teeIndex or pinIndex) 3) holes changed (add/edit/delete tee,pin,or dogleg)
-# 1. processed & done, 2. layout candidate (or auto-publish) 3. course update candidate
-
-

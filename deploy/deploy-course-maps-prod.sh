@@ -1,4 +1,6 @@
+## This should be run from the project root directory (DiscyServer):
+## ./deploy/deploy-course-maps-prod.sh
 
 # Deploy all course maps
-rsync -v --update ../app/course-maps/*.json nick@nickgeiger.com:/home/nick/apps/nickgeiger/api/discy/course-maps/
+rsync -v --update app/course-maps/*.json nick@nickgeiger.com:/home/nick/apps/nickgeiger/api/discy/course-maps/
 
