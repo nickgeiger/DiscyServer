@@ -6,11 +6,9 @@ require 'json'
 require 'fileutils'
 require 'open-uri'
 
+
 # Flag to print verbose output
 V = true
-
-# Base directory containing the archive structure
-##BASE_DIR = 'archive/archives'
 
 # Get and validate the archive directory parameter
 dir = ARGV[0]
@@ -32,7 +30,9 @@ rescue StandardError => e
   exit 1
 end
 
+# Base directory containing the archive structure
 BASE_DIR="#{dir}archives"
+
 
 ## Compares 2 course JSONs
 # reference_course is the current accepted course
@@ -400,5 +400,7 @@ def process_directory_structure
   puts "JSON files failed to process: #{json_files_failed}"
 end
 
+
 # Execute the main function
 process_directory_structure
+
