@@ -15,7 +15,7 @@ dir = ARGV[0]
 
 if dir.nil? || dir.strip.empty?
   puts "Error: Please provide the archive parent dir"
-  puts "Usage: ruby archive/archive.rb (archive_parent_dir)"
+  puts "Usage: ruby archive/process_archives.rb (archive_parent_dir)"
   exit 1
 end
 
