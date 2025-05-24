@@ -31,25 +31,33 @@ local_archive_dir="${dir}archives/"
 echo "Archiving: $server_archive_dir"
 echo "Destination: $local_archive_dir"
 
-if false; then ## TODO: REMOVE WHEN TEST RUNNING... ##################### DEBUG #################
-
 mkdir -p $local_archive_dir
 
 echo "rsync -rv --update nick@nickgeiger.com:${server_archive_dir}archive-* $local_archive_dir"
+
+if false; then ## TODO: REMOVE WHEN TEST RUNNING... ##################### DEBUG #################
+
 rsync -rv --update nick@nickgeiger.com:${server_archive_dir}archive-* $local_archive_dir
 
 echo "ssh nick@nickgeiger.com \"rm -rf ${server_archive_dir}archive-*\""
 ssh nick@nickgeiger.com "rm -rf ${server_archive_dir}archive-*"
 
+fi ## TODO: REMOVE WHEN TEST RUNNING ##################### DEBUG #################
+
 
 # Process the pulled archives
 
-fi ## TODO: REMOVE WHEN TEST RUNNING ##################### DEBUG #################
+# Exit if nothing to process
+##echo "ls -d ${local_archive_dir}archive-* 2>/dev/null"
+if [ -z "$(ls -d ${local_archive_dir}archive-* 2>/dev/null)" ]; then
+    echo "No archives to process"
+    exit 0
+fi
 
-echo "find $local_archive_dir* -name \"*.json\" -maxdepth 2 -mindepth 2"
+##echo "find $local_archive_dir* -name \"*.json\" -maxdepth 2 -mindepth 2"
 files_processed=$(find $local_archive_dir* -name "*.json" -maxdepth 2 -mindepth 2 | sed "s|$local_archive_dir||g")
 
-# ruby archive/process_archives.rb
+ruby archive/process-archives.rb $dir
 
 # TODO: Commit and push the changes to github
 # git add .
