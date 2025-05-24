@@ -48,23 +48,21 @@ fi ## TODO: REMOVE WHEN TEST RUNNING ##################### DEBUG ###############
 # Process the pulled archives
 
 # Exit if nothing to process
-##echo "ls -d ${local_archive_dir}archive-* 2>/dev/null"
 if [ -z "$(ls -d ${local_archive_dir}archive-* 2>/dev/null)" ]; then
     echo "No archives to process"
     exit 0
 fi
 
-##echo "find $local_archive_dir* -name \"*.json\" -maxdepth 2 -mindepth 2"
-files_processed=$(find $local_archive_dir* -name "*.json" -maxdepth 2 -mindepth 2 | sed "s|$local_archive_dir||g")
 
+files_processed=$(find $local_archive_dir* -name "*.json" -maxdepth 2 -mindepth 2 | sed "s|$local_archive_dir||g")
 ruby archive/process-archives.rb $dir
 
 # TODO: Commit and push the changes to github
-# git add .
-echo "git commit -am \"archive/archive.sh\n$files_processed\""
-# git commit -am "archive/archive.sh\n$files_processed"
-# git push
+git add .
+##echo "git commit -am \"archive/archive.sh\n$files_processed\""
+git commit -am "archive/archive.sh\n$files_processed"
+git push
 
 # Deploy the changes
-# ./deploy/deploy-course-maps-prod.sh
+### DEBUG #### ./deploy/deploy-course-maps-prod.sh
 
