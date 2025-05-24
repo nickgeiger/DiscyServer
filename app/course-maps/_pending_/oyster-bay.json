@@ -12,7 +12,7 @@
       "holes": [
         {
           "teeIndex": 0,
-          "holeIndex": 0,
+          "holeIndex": 1,
           "pinIndex": 0
         },
         {
@@ -293,7 +293,7 @@
       ]
     },
     {
-      "name": "Coyote B/B",
+      "name": "Coyote Z/B",
       "holes": [
         {
           "teeIndex": 1,
