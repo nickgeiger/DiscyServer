@@ -19,9 +19,7 @@ if ! mkdir -p "$dir"; then
     exit 1
 fi
 
-## TODO
-echo "git pull"
-#git pull
+git pull
 
 
 # Pull the archives
@@ -53,14 +51,14 @@ if [ -z "$(ls -d ${local_archive_dir}archive-* 2>/dev/null)" ]; then
     exit 0
 fi
 
-
 files_processed=$(find $local_archive_dir* -name "*.json" -maxdepth 2 -mindepth 2 | sed "s|$local_archive_dir||g")
 ruby archive/process-archives.rb $dir
 
 # TODO: Commit and push the changes to github
 git add .
 ##echo "git commit -am \"archive/archive.sh\n$files_processed\""
-git commit -am "archive/archive.sh\n$files_processed"
+git commit -am "archive/archive.sh
+$files_processed"
 git push
 
 # Deploy the changes
