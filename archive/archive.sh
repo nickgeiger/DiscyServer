@@ -51,6 +51,7 @@ if [ -z "$(ls -d ${local_archive_dir}archive-* 2>/dev/null)" ]; then
     exit 0
 fi
 
+echo "Processing: $dir"
 files_processed=$(find $local_archive_dir* -name "*.json" -maxdepth 2 -mindepth 2 | sed "s|$local_archive_dir||g")
 ruby archive/process-archives.rb $dir
 
