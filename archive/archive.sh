@@ -5,6 +5,7 @@
 ## accidentally continue and nuke server archive if it wasn't backed up
 set -e
 
+
 # Get and validate the archive directory parameter
 dir="$1"
 if [ -z "$dir" ]; then
@@ -19,18 +20,57 @@ if ! mkdir -p "$dir"; then
     exit 1
 fi
 
+
+# Sync with git
 git pull
 
+
 # TODO: Deploy approved courses
-# for approved courseID (in archive/pending-course-maps.json):
-# pull server to local: ng.com/api/discy/course-maps/_pending_ to app/course-maps
-# delete from _pending_ (local): rm app/course-maps/_pending_/foo.json foo.changes.json
+if ruby archive/approve-course-maps.rb; then
+
+  echo "Ruby script succeeded!"
+  # success commands
 # update pending-courses.json: delete pending["foo"]
 # git add .
 # git commit -am "archive/archive.sh approved foo,bar,..."
 # git push or die (conflict or issue.. try again next time but don't proceed to archiving until approval succeeds)
 # Deploy the changes
 ### ./deploy/deploy-course-maps-prod.sh ##################### DEBUG #################
+    
+else
+  echo "No courses to approve or error approving courses"
+fi
+
+# for approved courseID (in archive/pending-course-maps.json):
+
+approved_courses=($(jq -r 'to_entries[] | select(.value.approved == true) | .key' archive/pending-course-maps.json))
+if [[ ${#approved_courses[@]} -gt 0 ]]; then
+
+    for course_id in "${approved_courses[@]}"; do
+        echo "Processing approved courseId: $course_id"
+
+        # pull server to local: ng.com/api/discy/course-maps/_pending_ to app/course-maps
+        # delete from _pending_ (local): rm app/course-maps/_pending_/foo.json foo.changes.json
+        echo "rsync nick@nickgeiger.com:/home/nick/api/discy/course-maps/_pending/${course_id}.json > app/course-maps"
+        echo "rm app/course-maps/_pending/${course_id}.json"
+        echo "rm app/course-maps/_pending/${course_id}.changes.json"
+
+        ##echo "curl https://www.nickgeiger.com/api/discy/course-maps/_pending_/${course_id}.json > app/course-maps/${course_id}
+    done
+
+# update pending-courses.json: delete pending["foo"]
+# git add .
+# git commit -am "archive/archive.sh approved foo,bar,..."
+# git push or die (conflict or issue.. try again next time but don't proceed to archiving until approval succeeds)
+# Deploy the changes
+### ./deploy/deploy-course-maps-prod.sh ##################### DEBUG #################
+    
+else
+    echo "No approved courses to publish"
+fi
+##jq -r 'to_entries[] | select(.value.approved == true) | .key' archive/pending-course-maps.json | while read course_id; do
+
+
 
 # Pull the archives
 server_archive_dir="/home/nick/discy-published-map-archives/"
@@ -65,14 +105,17 @@ echo "Processing archives in: $dir"
 files_processed=$(find $local_archive_dir* -name "*.json" -maxdepth 2 -mindepth 2 | sed "s|$local_archive_dir||g")
 ruby archive/process-archives.rb $dir
 
+
 # Commit and push the changes to github
 git add .
 git commit -am "archive/archive.sh
 $files_processed"
 git push
 
+
 # Deploy the changes
 ### ./deploy/deploy-course-maps-prod.sh ##################### DEBUG #################
 
-# TODO: Notify of _pending_ course IDs: jq deploy/pending.json
+
+# TODO: Notify of _pending_ course IDs: jq -r 'to_entries[] | .key' archive/pending-course-maps.json
 # curl -d "fyi something else pubbed - foobar-id2 or url2" ntfy.sh/foo-bar-baz
