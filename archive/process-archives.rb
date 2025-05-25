@@ -5,6 +5,7 @@
 require 'json'
 require 'fileutils'
 require 'open-uri'
+require 'digest'
 
 
 # Flag to print verbose output
@@ -375,7 +376,11 @@ def process_directory_structure
               pending_course_file = "#{course_maps_pending_dir}#{course_id}.json"
               FileUtils.cp(json_file, pending_course_file)
 
-              pending_course_maps[course_id] = { :hash => "todo", :changes => "result", :approved => false }
+              pending_course_maps[course_id] = {
+                :hash => Digest::MD5.file(pending_course_file).hexdigest,
+                :changes => result,
+                :approved => false
+              }
 
               changes_file = "#{course_maps_pending_dir}#{course_id}.changes.json"
               File.write(changes_file, result.to_json)
