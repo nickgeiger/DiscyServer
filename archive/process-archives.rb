@@ -304,6 +304,9 @@ def process_directory_structure
   json_files_processed = 0
   json_files_failed = 0
 
+  pending_course_maps_file = "archive/pending-course-maps.json"
+  pending_course_maps = parse_json_file(pending_course_maps_file) || {}
+
   course_maps_pending_dir = "app/course-maps/_pending_/"
   FileUtils.mkdir_p(course_maps_pending_dir)
 
@@ -357,8 +360,9 @@ def process_directory_structure
           case result["result"]
 
             when :no_changes, :invalid_changes
+
               # Nothing to do here
-              ##puts "Course has invalid changes" if V
+              puts "Course has invalid changes" if V
 
             when :layout_changed
 
@@ -370,6 +374,8 @@ def process_directory_structure
 
               pending_course_file = "#{course_maps_pending_dir}#{course_id}.json"
               FileUtils.cp(json_file, pending_course_file)
+
+              pending_course_maps[course_id] = { :hash => "todo", :changes => "result", :approved => false }
 
               changes_file = "#{course_maps_pending_dir}#{course_id}.changes.json"
               File.write(changes_file, result.to_json)
@@ -384,6 +390,8 @@ def process_directory_structure
           json_files_failed += 1
         end
       end
+
+      File.write(pending_course_maps_file, pending_course_maps.to_json)
     end
 
     # Move the entire processed archive folder to the "done" dir

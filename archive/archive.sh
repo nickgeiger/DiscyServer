@@ -21,6 +21,14 @@ fi
 
 git pull
 
+# Deploy approved courses
+# for approved courseID (in pending-courses.json):
+# pull from server _pending_ to local
+# delete from _pending_ (local)
+# update pending-courses.json
+# git push or die (conflict or issue.. try again next time but don't proceed to archiving until approval succeeds)
+# Deploy the changes
+### ./deploy/deploy-course-maps-prod.sh ##################### DEBUG #################
 
 # Pull the archives
 server_archive_dir="/home/nick/discy-published-map-archives/"
@@ -64,3 +72,5 @@ git push
 # Deploy the changes
 ### ./deploy/deploy-course-maps-prod.sh ##################### DEBUG #################
 
+# TODO: Notify of _pending_ course IDs: jq deploy/pending.json
+# curl -d "fyi something else pubbed - foobar-id2 or url2" ntfy.sh/foo-bar-baz
