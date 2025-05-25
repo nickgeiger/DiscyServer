@@ -1,0 +1,12 @@
+[
+  {
+    "courseId": "moraga-commons-park",
+    "hash": "md5ofcoursejson",
+    "approved": false
+  },
+  {
+    "courseId": "new-course",
+    "hash": "md5ofcoursejson",
+    "approved": false
+  },
+]
