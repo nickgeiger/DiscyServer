@@ -326,7 +326,7 @@ def process_directory_structure
 
     ############# DEBUG ###########
     ## TODO: Remove this, for debug working with 1 archive
-    next unless archive_dir == "#{BASE_DIR}/archive-999"
+    ###next unless archive_dir == "#{BASE_DIR}/archive-999"
     ############# DEBUG ###########
 
 
