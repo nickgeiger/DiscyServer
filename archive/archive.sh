@@ -21,11 +21,13 @@ fi
 
 git pull
 
-# Deploy approved courses
-# for approved courseID (in pending-courses.json):
-# pull from server _pending_ to local
-# delete from _pending_ (local)
-# update pending-courses.json
+# TODO: Deploy approved courses
+# for approved courseID (in archive/pending-course-maps.json):
+# pull server to local: ng.com/api/discy/course-maps/_pending_ to app/course-maps
+# delete from _pending_ (local): rm app/course-maps/_pending_/foo.json foo.changes.json
+# update pending-courses.json: delete pending["foo"]
+# git add .
+# git commit -am "archive/archive.sh approved foo,bar,..."
 # git push or die (conflict or issue.. try again next time but don't proceed to archiving until approval succeeds)
 # Deploy the changes
 ### ./deploy/deploy-course-maps-prod.sh ##################### DEBUG #################

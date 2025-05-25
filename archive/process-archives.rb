@@ -305,6 +305,7 @@ def process_directory_structure
   json_files_processed = 0
   json_files_failed = 0
 
+  courses = parse_json_file("app/courses.json")
   pending_course_maps_file = "archive/pending-course-maps.json"
   pending_course_maps = parse_json_file(pending_course_maps_file) || {}
 
@@ -323,13 +324,6 @@ def process_directory_structure
     # Verify that timestamp is numeric
     next unless timestamp =~ /^\d+$/
 
-
-    ############# DEBUG ###########
-    ## TODO: Remove this, for debug working with 1 archive
-    ###next unless archive_dir == "#{BASE_DIR}/archive-999"
-    ############# DEBUG ###########
-
-
     # Process each subdirectory (course_id) in this archive
     Dir.glob("#{archive_dir}/*").select { |f| File.directory?(f) }.each do |course_dir|
       directories_found += 1
@@ -340,6 +334,9 @@ def process_directory_structure
         puts "\nSkipping unknown course(s): #{course_dir}"
         next
       end
+
+      course = courses.bsearch{ |course| course_id <=> course["courseId"] }
+      puts "Course for #{course_id}: #{course}"
 
       live_course_json = fetch_live_course(course_id)
       unless live_course_json
