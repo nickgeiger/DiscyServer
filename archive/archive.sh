@@ -28,48 +28,18 @@ git pull
 # TODO: Deploy approved courses
 if ruby archive/approve-course-maps.rb; then
 
-  echo "Ruby script succeeded!"
-  # success commands
-# update pending-courses.json: delete pending["foo"]
+  echo "Approved courses, committing and publishing"
+
 # git add .
+#approved_courses=($(jq -r 'to_entries[] | select(.value.approved == true) | .key' archive/pending-course-maps.json))
 # git commit -am "archive/archive.sh approved foo,bar,..."
 # git push or die (conflict or issue.. try again next time but don't proceed to archiving until approval succeeds)
 # Deploy the changes
 ### ./deploy/deploy-course-maps-prod.sh ##################### DEBUG #################
     
 else
-  echo "No courses to approve or error approving courses"
+  echo "No courses approved"
 fi
-
-# for approved courseID (in archive/pending-course-maps.json):
-
-approved_courses=($(jq -r 'to_entries[] | select(.value.approved == true) | .key' archive/pending-course-maps.json))
-if [[ ${#approved_courses[@]} -gt 0 ]]; then
-
-    for course_id in "${approved_courses[@]}"; do
-        echo "Processing approved courseId: $course_id"
-
-        # pull server to local: ng.com/api/discy/course-maps/_pending_ to app/course-maps
-        # delete from _pending_ (local): rm app/course-maps/_pending_/foo.json foo.changes.json
-        echo "rsync nick@nickgeiger.com:/home/nick/api/discy/course-maps/_pending/${course_id}.json > app/course-maps"
-        echo "rm app/course-maps/_pending/${course_id}.json"
-        echo "rm app/course-maps/_pending/${course_id}.changes.json"
-
-        ##echo "curl https://www.nickgeiger.com/api/discy/course-maps/_pending_/${course_id}.json > app/course-maps/${course_id}
-    done
-
-# update pending-courses.json: delete pending["foo"]
-# git add .
-# git commit -am "archive/archive.sh approved foo,bar,..."
-# git push or die (conflict or issue.. try again next time but don't proceed to archiving until approval succeeds)
-# Deploy the changes
-### ./deploy/deploy-course-maps-prod.sh ##################### DEBUG #################
-    
-else
-    echo "No approved courses to publish"
-fi
-##jq -r 'to_entries[] | select(.value.approved == true) | .key' archive/pending-course-maps.json | while read course_id; do
-
 
 
 # Pull the archives
