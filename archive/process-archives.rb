@@ -329,14 +329,20 @@ def process_directory_structure
       directories_found += 1
       course_id = File.basename(course_dir)
 
-      # TODO: _unknown courses could be new course candidates
+      # TODO: _unknown courses could be new course candidates... queue for manual review
       if course_id == "_unknown"
         puts "\nSkipping unknown course(s): #{course_dir}"
         next
       end
 
+      # Ensure courseId is valid
       course = courses.bsearch{ |course| course_id <=> course["courseId"] }
-      puts "Course for #{course_id}: #{course}"
+      puts "Course for #{course_id}: #{course}" if V
+      unless course
+        # This shouldn't really happen because the server is also validating...
+        puts "\nSkipping unknown course(s): #{course_id}"
+        next
+      end
 
       live_course_json = fetch_live_course(course_id)
       unless live_course_json
@@ -393,7 +399,7 @@ def process_directory_structure
         end
       end
 
-      File.write(pending_course_maps_file, pending_course_maps.to_json)
+      File.write(pending_course_maps_file, JSON.pretty_generate(pending_course_maps))
     end
 
     # Move the entire processed archive folder to the "done" dir
