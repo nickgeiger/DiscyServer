@@ -403,8 +403,7 @@ def process_directory_structure
     end
 
     # Move the entire processed archive folder to the "done" dir
-    puts "\n### TODO: NEXT: mv #{archive_dir} #{processed_dir}"
-    ##FileUtils.mv(archive_dir, processed_dir)
+    FileUtils.mv(archive_dir, processed_dir)
 
   end
 
