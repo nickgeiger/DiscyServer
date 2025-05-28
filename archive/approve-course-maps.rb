@@ -8,12 +8,13 @@ require 'open-uri'
 require 'digest'
 
 
-# Fetches latest server course and returns JSON or nil
-def fetch_pending_course(course_id)
+# Fetches latest server course and writes it to the local file
+def fetch_pending_course_to_file(course_id, local_file)
   url = "https://www.nickgeiger.com/api/discy/course-maps/_pending_/#{course_id}.json"
+  puts "Fetching #{url} to #{local_file}"
   begin
     response = URI.open(url).read
-    return JSON.parse(response)
+    File.write(local_file, response)
   rescue OpenURI::HTTPError => e
     puts "HTTP Error: #{e.message}"
     return nil
@@ -46,6 +47,8 @@ end
 # Main function to process the approved course maps
 def approve_course_maps
 
+  local_pending_dir = "app/course-maps/_pending_/"
+
   pending_courses = parse_json_file("archive/pending-course-maps.json")
   unless pending_courses && pending_courses.length > 0
     puts "No pending courses to approve"
@@ -56,10 +59,31 @@ def approve_course_maps
   pending_courses.each do |course_id, pending|
     puts "courseId: #{course_id}"
     puts "  #{pending}"
+
+    approved = false
     if pending["approved"]
-      puts "Approving courseId: #{course_id}"
-      approved_count += 1
+
+      # Confirm we have the file and it matches the hash
+      hash = pending["hash"]
+      pending_course_file = "#{local_pending_dir}#{course_id}.json"
+
+      approved = File.file?(pending_course_file) && Digest::MD5.file(pending_course_file).hexdigest == hash
+
+      unless approved
+        # Try fetching the server file if we didn't have it locally already
+        fetch_pending_course_to_file(course_id, pending_course_file)
+        approved = File.file?(pending_course_file) && Digest::MD5.file(pending_course_file).hexdigest == hash
+      end
+
     end
+
+    if approved
+      puts "Approving courseId: #{course_id}"
+
+      approved_count += 1
+
+    end
+
   end
 
   if approved_count < 1
