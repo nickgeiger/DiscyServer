@@ -33,6 +33,7 @@ end
 
 # Base directory containing the archive structure
 BASE_DIR="#{dir}archives"
+PROCESSED_DIR="#{dir}archives_processed"
 
 
 ## Compares 2 course JSONs
@@ -312,8 +313,7 @@ def process_directory_structure
   course_maps_pending_dir = "app/course-maps/_pending_/"
   FileUtils.mkdir_p(course_maps_pending_dir)
 
-  processed_dir = "#{BASE_DIR}/_processed_/"
-  FileUtils.mkdir_p(processed_dir)
+  FileUtils.mkdir_p(PROCESSED_DIR)
 
   # Pattern matching archive/archives/archive-TIMESTAMP/COURSE_DIR
   Dir.glob("#{BASE_DIR}/archive-*").each do |archive_dir|
@@ -403,7 +403,7 @@ def process_directory_structure
     end
 
     # Move the entire processed archive folder to the "done" dir
-    FileUtils.mv(archive_dir, processed_dir)
+    FileUtils.mv(archive_dir, PROCESSED_DIR)
 
   end
 

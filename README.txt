@@ -11,7 +11,7 @@ git clone git@github.com:nickgeiger/DiscyServer.git
 # Then setup cron to run the archiver every minute:
 
 nick@Nicks-Mac-mini ~ % crontab -l
-* * * * * cd /Users/nick/archiver/DiscyServer && ./archive/archive.sh /Dropbox/DiscyArchives/
+* * * * * cd /Users/nick/archiver/DiscyServer && ./archive/archive.sh prod /Dropbox/DiscyArchives/
 
 (Where the passed archive directory can be a dropbox directory so that the outputs are all archived there)
 
