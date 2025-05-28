@@ -59,8 +59,6 @@ def approve_course_maps
 
   approved_count = 0
   pending_courses.each do |course_id, pending|
-    puts "courseId: #{course_id}"
-    puts "  #{pending}"
 
     approved = false
     if pending["approved"]
