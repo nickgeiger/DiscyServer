@@ -87,7 +87,7 @@ echo "ssh nick@nickgeiger.com \"rm -rf ${server_archive_dir}archive-*\""
 # Process the pulled archives
 echo "Processing archives in: $dir"
 files_processed=$(find $local_archive_dir* -name "*.json" -maxdepth 2 -mindepth 2 | sed "s|$local_archive_dir||g")
-ruby archive/process-archives.rb $dir
+ruby archive/process-archives.rb $dev_or_prod $dir
 
 
 # Commit and push the changes to github
