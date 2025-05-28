@@ -104,4 +104,8 @@ git push
 
 
 # TODO: Notify of _pending_ course IDs: jq -r 'to_entries[] | .key' archive/pending-course-maps.json
+echo "TODO: Notifying: New courses approved:
+${approved_courses}"
 # curl -d "fyi something else pubbed - foobar-id2 or url2" ntfy.sh/foo-bar-baz
+
+

@@ -417,7 +417,6 @@ def process_directory_structure
     # Generate unique processed folder in case we are "re-archiving" this
     processed_to = PROCESSED_DIR
     archive_filename = File.basename(archive_dir)
-puts "processed_to #{PROCESSED_DIR}/#{archive_filename} - exist? #{"#{PROCESSED_DIR}/#{archive_filename}"}"
     if File.exist?("#{PROCESSED_DIR}/#{archive_filename}")
       counter = 0
       loop do
