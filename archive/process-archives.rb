@@ -413,7 +413,20 @@ def process_directory_structure
     end
 
     # Move the entire processed archive folder to the "done" dir
-    FileUtils.mv(archive_dir, PROCESSED_DIR)
+
+    # Generate unique processed folder in case we are "re-archiving" this
+    processed_to = PROCESSED_DIR
+    if File.exist?("#{PROCESSED_DIR}#{archive_dir}")
+      counter = 0
+      loop do
+        counter += 1
+        processed_to = File.join(PROCESSED_DIR, "#{archive_dir}-#{counter}")
+        break unless File.exist?(processed_to)
+      end
+      puts "Processed to re-archived dir: #{processed_to}" if V
+    end
+
+    FileUtils.mv(archive_dir, processed_to)
 
   end
 
