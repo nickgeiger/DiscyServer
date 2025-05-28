@@ -376,7 +376,7 @@ def process_directory_structure
             when :no_changes, :invalid_changes
 
               # Nothing to do here
-              puts "Course has invalid changes" if V
+              puts "No valid course changes to queue" if V
 
             when :layout_changed
 
