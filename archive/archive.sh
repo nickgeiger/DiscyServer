@@ -81,7 +81,7 @@ rsync -rv --update nick@nickgeiger.com:${server_archive_dir}archive-* $local_arc
 
 # Remove the archives from the server
 echo "ssh nick@nickgeiger.com \"rm -rf ${server_archive_dir}archive-*\""
-####ssh nick@nickgeiger.com "rm -rf ${server_archive_dir}archive-*" ##################### DEBUG #################
+ssh nick@nickgeiger.com "rm -rf ${server_archive_dir}archive-*"
 
 
 # Process the pulled archives
@@ -107,9 +107,7 @@ git push # Dies if there were no changes pushed, like if pending changes produce
 to_approve=($(jq -r 'to_entries[] | select(.value.approved == false) | .key' archive/pending-course-maps.json))
 echo "curl -d \"New courses to approve:
 ${to_approve}\" ntfy.sh/dg-approvals-ndnajm9xne8GKJybt"
-curl -d "New courses to approve:
+curl -d "New courses to approve: $dev_or_prod
 ${to_approve}" ntfy.sh/dg-approvals-ndnajm9xne8GKJybt
-
-## curl -d "fyi something else pubbed - foobar-id2 or url2" ntfy.sh/foo-bar-baz
 
 
