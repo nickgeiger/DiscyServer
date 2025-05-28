@@ -49,11 +49,13 @@ def approve_course_maps
 
   local_pending_dir = "app/course-maps/_pending_/"
 
-  pending_courses = parse_json_file("archive/pending-course-maps.json")
+  pending_course_maps_json_file = "archive/pending-course-maps.json"
+  pending_courses = parse_json_file(pending_course_maps_json_file)
   unless pending_courses && pending_courses.length > 0
     puts "No pending courses to approve"
     exit 1
   end
+  unapproved_courses = {}
 
   approved_count = 0
   pending_courses.each do |course_id, pending|
@@ -80,8 +82,13 @@ def approve_course_maps
     if approved
       puts "Approving courseId: #{course_id}"
 
+      FileUtils.mv(pending_course_file, "app/course-maps/#{course_id}.json")
+      FileUtils.rm_f("#{local_pending_dir}#{course_id}.changes.json")
+
       approved_count += 1
 
+    else
+      unapproved_courses[course_id] = pending
     end
 
   end
@@ -90,6 +97,8 @@ def approve_course_maps
     puts "No pending courses were approved"
     exit 1
   end
+
+  File.write(pending_course_maps_json_file, unapproved_courses.to_json)
 
 #approved_courses=($(jq -r 'to_entries[] | select(.value.approved == true) | .key' archive/pending-course-maps.json))
 #if [[ ${#approved_courses[@]} -gt 0 ]]; then

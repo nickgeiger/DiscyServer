@@ -41,17 +41,22 @@ git pull
 
 
 # Deploy approved course maps
+
+approved_courses=($(jq -r 'to_entries[] | select(.value.approved == true) | .key' archive/pending-course-maps.json))
 if ruby archive/approve-course-maps.rb; then
 
-  echo "Approved course maps, committing and publishing"
+    echo "Approved course maps, committing and publishing"
 
-# git add .
-#approved_courses=($(jq -r 'to_entries[] | select(.value.approved == true) | .key' archive/pending-course-maps.json))
-# git commit -am "archive/archive.sh approved foo,bar,..."
-# git push or die (conflict or issue.. try again next time but don't proceed to archiving until approval succeeds)
-# Deploy the changes
-### ./deploy/deploy-course-maps.sh $dev_or_prod ##################### DEBUG #################
-    
+    git add .
+    echo "git commit -am \"archive/archive.sh approved
+$approved_courses\""
+    git commit -am "archive/archive.sh approved
+$approved_courses"
+    git push ## or die (conflict or issue.. try again next time but don't proceed to archiving until approval succeeds)
+
+    # Deploy the changes
+    ./deploy/deploy-course-maps.sh $dev_or_prod
+
 else
   echo "No courses approved"
 fi
