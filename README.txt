@@ -15,3 +15,14 @@ nick@Nicks-Mac-mini ~ % crontab -l
 
 (Where the passed archive directory can be a dropbox directory so that the outputs are all archived there)
 
+
+
+# HINTS
+
+# copy some dev archives to test the archiver
+
+rsync -rv /Users/nick/Dropbox/NickGeiger_SoleProprietor/Discy/PublishedCourseMapsArchive/archives/archive-1748394061 nick@nickgeiger.com:/home/nick/discy-published-map-archives-wnv8FGB2ewc/
+
+# test the archiver in dev
+
+./archive/archive.sh dev /Users/nick/workspace/TestPublishedMapsArchive

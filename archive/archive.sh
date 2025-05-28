@@ -40,10 +40,7 @@ fi
 git pull
 
 
-echo "TODO: Next approve course maps" ### DEBU
-exit 2 #### TODO... Next
-
-# TODO: Deploy approved course maps
+# Deploy approved course maps
 if ruby archive/approve-course-maps.rb; then
 
   echo "Approved course maps, committing and publishing"
@@ -53,7 +50,7 @@ if ruby archive/approve-course-maps.rb; then
 # git commit -am "archive/archive.sh approved foo,bar,..."
 # git push or die (conflict or issue.. try again next time but don't proceed to archiving until approval succeeds)
 # Deploy the changes
-### ./deploy/deploy-course-maps-prod.sh ##################### DEBUG #################
+### ./deploy/deploy-course-maps.sh $dev_or_prod ##################### DEBUG #################
     
 else
   echo "No courses approved"
@@ -66,28 +63,23 @@ local_archive_dir="${dir}archives/"
 echo "Archiving $dev_or_prod: $server_archive_dir"
 echo "Destination: $local_archive_dir"
 
-mkdir -p $local_archive_dir
-
-echo "rsync -rv --update nick@nickgeiger.com:${server_archive_dir}archive-* $local_archive_dir"
-
-if false; then ## TODO: REMOVE WHEN TEST RUNNING... ##################### DEBUG #################
-
-rsync -rv --update nick@nickgeiger.com:${server_archive_dir}archive-* $local_archive_dir
-
-echo "ssh nick@nickgeiger.com \"rm -rf ${server_archive_dir}archive-*\""
-ssh nick@nickgeiger.com "rm -rf ${server_archive_dir}archive-*"
-
-fi ## TODO: REMOVE WHEN TEST RUNNING ##################### DEBUG #################
-
-
-# Process the pulled archives
-
-# Exit if nothing to process
-if [ -z "$(ls -d ${local_archive_dir}archive-* 2>/dev/null)" ]; then
+# Exit if no archives to process
+if ! ssh nick@nickgeiger.com "ls -d ${server_archive_dir}archive-* 2>/dev/null" >/dev/null; then
     echo "No archives to process"
     exit 0
 fi
 
+mkdir -p $local_archive_dir
+
+echo "rsync -rv --update nick@nickgeiger.com:${server_archive_dir}archive-* $local_archive_dir"
+rsync -rv --update nick@nickgeiger.com:${server_archive_dir}archive-* $local_archive_dir
+
+# Remove the archives from the server
+echo "ssh nick@nickgeiger.com \"rm -rf ${server_archive_dir}archive-*\""
+####ssh nick@nickgeiger.com "rm -rf ${server_archive_dir}archive-*"
+
+
+# Process the pulled archives
 echo "Processing archives in: $dir"
 files_processed=$(find $local_archive_dir* -name "*.json" -maxdepth 2 -mindepth 2 | sed "s|$local_archive_dir||g")
 ruby archive/process-archives.rb $dir
@@ -101,7 +93,7 @@ git push
 
 
 # Deploy the changes
-### ./deploy/deploy-course-maps-prod.sh ##################### DEBUG #################
+./deploy/deploy-course-maps.sh $dev_or_prod
 
 
 # TODO: Notify of _pending_ course IDs: jq -r 'to_entries[] | .key' archive/pending-course-maps.json

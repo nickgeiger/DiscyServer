@@ -58,15 +58,16 @@
     "approved": false
   },
   "chabot-park": {
-    "hash": "18fd2695085c899148e088cfc6a39d01",
+    "hash": "ecad5f04f6a4eacfd84944b9b31f5f7f",
     "changes": {
-      "result": "course_changed",
+      "result": "course_and_layout_changed",
       "diffs": [
-        "Hole '1' Pin '1' latitude set to 37.72998046875 (vs. 37.73000305522035)",
-        "Hole '1' Pin '1' longitude set to -122.1293148492669 (vs. -122.12923689756741)",
-        "Hole '1' Tee '1' latitude set to 37.730560302734375 (vs. 37.730562104894645)",
-        "Hole '1' Tee '1' longitude set to -122.13005249751981 (vs. -122.13001736192392)",
-        "Hole '6' has 2 tees (vs. 1)"
+        "Hole '4' has 2 pins (vs. 1)",
+        "Hole '8' has 2 tees (vs. 1)",
+        "Hole '9' has 2 pins (vs. 1)",
+        "Layout '1' - Hole 4: pinIndex set to 1 (vs. 0)",
+        "Layout '1' - Hole 8: teeIndex set to 1 (vs. 0)",
+        "Layout '1' - Hole 9: pinIndex set to 1 (vs. 0)"
       ]
     },
     "approved": false
