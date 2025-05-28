@@ -76,7 +76,7 @@ rsync -rv --update nick@nickgeiger.com:${server_archive_dir}archive-* $local_arc
 
 # Remove the archives from the server
 echo "ssh nick@nickgeiger.com \"rm -rf ${server_archive_dir}archive-*\""
-####ssh nick@nickgeiger.com "rm -rf ${server_archive_dir}archive-*"
+####ssh nick@nickgeiger.com "rm -rf ${server_archive_dir}archive-*" ##################### DEBUG #################
 
 
 # Process the pulled archives
