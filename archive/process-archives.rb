@@ -416,11 +416,13 @@ def process_directory_structure
 
     # Generate unique processed folder in case we are "re-archiving" this
     processed_to = PROCESSED_DIR
-    if File.exist?("#{PROCESSED_DIR}#{archive_dir}")
+    archive_filename = File.basename(archive_dir)
+puts "processed_to #{PROCESSED_DIR}/#{archive_filename} - exist? #{"#{PROCESSED_DIR}/#{archive_filename}"}"
+    if File.exist?("#{PROCESSED_DIR}/#{archive_filename}")
       counter = 0
       loop do
         counter += 1
-        processed_to = File.join(PROCESSED_DIR, "#{archive_dir}-#{counter}")
+        processed_to = File.join(PROCESSED_DIR, "#{archive_filename}-#{counter}")
         break unless File.exist?(processed_to)
       end
       puts "Processed to re-archived dir: #{processed_to}" if V
