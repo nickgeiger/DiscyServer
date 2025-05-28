@@ -18,6 +18,6 @@ api_dir="/home/nick/apps/nickgeiger/$dir/discy"
 echo "Deploying course maps to $dev_or_prod ($api_dir)"
 
 # Deploy all course maps
-echo "rsync -v --update app/course-maps/*.json nick@nickgeiger.com:$api_dir/course-maps/"
-rsync -v --update app/course-maps/*.json nick@nickgeiger.com:$api_dir/course-maps/
+echo "rsync -rv --update app/course-maps/*.json nick@nickgeiger.com:$api_dir/course-maps/"
+rsync -rv --update app/course-maps/*.json nick@nickgeiger.com:$api_dir/course-maps/
 
