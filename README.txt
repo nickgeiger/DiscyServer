@@ -23,7 +23,7 @@ nick@Nicks-Mac-mini ~ % crontab -l
 rsync -rv /Users/nick/Dropbox/NickGeiger_SoleProprietor/Discy/PublishedCourseMapsArchive/archives/archive-1748394061 nick@nickgeiger.com:/home/nick/discy-published-map-archives-wnv8FGB2ewc/
 
 # blast the local _processed_ in case there are testing dupes
-trash /Users/nick/workspace/TestPublishedMapsArchive/archives/_processed_/*
+trash /Users/nick/workspace/TestPublishedMapsArchive/archives_processed/*
 
 # test the archiver in dev
 ./archive/archive.sh dev /Users/nick/workspace/TestPublishedMapsArchive
