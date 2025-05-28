@@ -87,6 +87,8 @@ ruby archive/process-archives.rb $dir
 
 # Commit and push the changes to github
 git add .
+echo "git commit -am \"archive/archive.sh
+$files_processed\""
 git commit -am "archive/archive.sh
 $files_processed"
 git push
