@@ -1,17 +1,2 @@
 {
-  "chabot-park": {
-    "hash": "ecad5f04f6a4eacfd84944b9b31f5f7f",
-    "changes": {
-      "result": "course_and_layout_changed",
-      "diffs": [
-        "Hole '4' has 2 pins (vs. 1)",
-        "Hole '8' has 2 tees (vs. 1)",
-        "Hole '9' has 2 pins (vs. 1)",
-        "Layout '1' - Hole 4: pinIndex set to 1 (vs. 0)",
-        "Layout '1' - Hole 8: teeIndex set to 1 (vs. 0)",
-        "Layout '1' - Hole 9: pinIndex set to 1 (vs. 0)"
-      ]
-    },
-    "approved": true
-  }
 }
