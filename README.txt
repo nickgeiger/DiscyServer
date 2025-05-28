@@ -20,9 +20,10 @@ nick@Nicks-Mac-mini ~ % crontab -l
 # HINTS
 
 # copy some dev archives to test the archiver
-
 rsync -rv /Users/nick/Dropbox/NickGeiger_SoleProprietor/Discy/PublishedCourseMapsArchive/archives/archive-1748394061 nick@nickgeiger.com:/home/nick/discy-published-map-archives-wnv8FGB2ewc/
 
-# test the archiver in dev
+# blast the local _processed_ in case there are testing dupes
+trash /Users/nick/workspace/TestPublishedMapsArchive/archives/_processed_/*
 
+# test the archiver in dev
 ./archive/archive.sh dev /Users/nick/workspace/TestPublishedMapsArchive
