@@ -96,7 +96,7 @@ echo "git commit -am \"archive/archive.sh
 $files_processed\""
 git commit -am "archive/archive.sh
 $files_processed"
-git push
+git push # Dies if there were no changes pushed, like if pending changes produced no diffs
 
 
 # Deploy the changes
@@ -104,8 +104,9 @@ git push
 
 
 # TODO: Notify of _pending_ course IDs: jq -r 'to_entries[] | .key' archive/pending-course-maps.json
-echo "TODO: Notifying: New courses approved:
-${approved_courses}"
+new_approvals=$(echo "$files_processed" | cut -d'/' -f2 | sort -u)
+echo "TODO: Notifying: New courses to approve:
+${new_approvals}"
 # curl -d "fyi something else pubbed - foobar-id2 or url2" ntfy.sh/foo-bar-baz
 
 
