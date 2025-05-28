@@ -6,11 +6,26 @@
 set -e
 
 
+# Get and validate the dev-or-prod parameter
+dev_or_prod="$1"
+if [ "$dev_or_prod" != "dev" ] && [ "$dev_or_prod" != "prod" ]; then
+    echo "Error: Please specify dev or prod"
+    echo "Usage: ./archive/archive.sh (dev or prod) (archive_parent_dir)"
+    exit 1
+fi
+if [ $dev_or_prod = "prod" ]; then
+    archive_dir="discy-published-map-archives"
+else
+    archive_dir="discy-published-map-archives-wnv8FGB2ewc"
+fi
+server_archive_dir="/home/nick/$archive_dir/"
+
+
 # Get and validate the archive directory parameter
-dir="$1"
+dir="$2"
 if [ -z "$dir" ]; then
     echo "Error: Please provide the archive parent dir"
-    echo "Usage: ./archive/archive.sh (archive_parent_dir)"
+    echo "Usage: ./archive/archive.sh (dev or prod) (archive_parent_dir)"
     exit 1
 fi
 # Ensure trailing slash
@@ -25,10 +40,13 @@ fi
 git pull
 
 
-# TODO: Deploy approved courses
+echo "TODO: Next approve course maps" ### DEBU
+exit 2 #### TODO... Next
+
+# TODO: Deploy approved course maps
 if ruby archive/approve-course-maps.rb; then
 
-  echo "Approved courses, committing and publishing"
+  echo "Approved course maps, committing and publishing"
 
 # git add .
 #approved_courses=($(jq -r 'to_entries[] | select(.value.approved == true) | .key' archive/pending-course-maps.json))
@@ -43,10 +61,9 @@ fi
 
 
 # Pull the archives
-server_archive_dir="/home/nick/discy-published-map-archives/"
 local_archive_dir="${dir}archives/"
 
-echo "Archiving: $server_archive_dir"
+echo "Archiving $dev_or_prod: $server_archive_dir"
 echo "Destination: $local_archive_dir"
 
 mkdir -p $local_archive_dir
