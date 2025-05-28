@@ -1,5 +1,5 @@
 ## This should be run from the project root directory (DiscyServer):
-## ruby archive/process_archives.rb /Dropbox/DiscyArchives/
+## ruby archive/process_archives.rb (dev or prod) /Dropbox/DiscyArchives/
 
 #!/usr/bin/env ruby
 require 'json'
@@ -11,14 +11,23 @@ require 'digest'
 # Flag to print verbose output
 V = true
 
-# Get and validate the archive directory parameter
-dir = ARGV[0]
-
-if dir.nil? || dir.strip.empty?
-  puts "Error: Please provide the archive parent dir"
-  puts "Usage: ruby archive/process_archives.rb (archive_parent_dir)"
+# Get and validate the dev_or_prod parameter
+dev_or_prod = ARGV[0]
+unless dev_or_prod == "dev" || dev_or_prod == "prod"
+  puts "Error: Please specify dev or prod"
+  puts "Usage: ruby archive/process_archives.rb (dev or prod) (archive_parent_dir)"
   exit 1
 end
+
+# Get and validate the archive directory parameter
+dir = ARGV[1]
+if dir.nil? || dir.strip.empty?
+  puts "Error: Please provide the archive parent dir"
+  puts "Usage: ruby archive/process_archives.rb (dev or prod) (archive_parent_dir)"
+  exit 1
+end
+
+COURSE_MAPS_URL="https://www.nickgeiger.com/api#{dev_or_prod == "prod" ? "" : "-wnv8FGB2ewc"}/discy/course-maps/"
 
 # Ensure trailing slash
 dir += '/' unless dir.end_with?('/')
@@ -267,7 +276,8 @@ end
 
 # Fetches latest server course and returns JSON or nil
 def fetch_live_course(course_id)
-  url = "https://www.nickgeiger.com/api/discy/course-maps/#{course_id}.json"
+  url = "#{COURSE_MAPS_URL}#{course_id}.json"
+  puts "Live course URL: #{url}"
   begin
     response = URI.open(url).read
     return JSON.parse(response)
