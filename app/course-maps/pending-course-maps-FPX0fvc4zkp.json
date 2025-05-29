@@ -1,2 +1,13 @@
 {
+  "golden-gate-park": {
+    "hash": "770ee13edec1298ddceb0c6050380d18",
+    "changes": {
+      "result": "course_and_layout_changed",
+      "diffs": [
+        "Hole '15' Pin 'B' renamed to 'Bz'",
+        "Layout '1' - Hole 6: teeIndex set to 1 (vs. 0)"
+      ]
+    },
+    "approved": false
+  }
 }
