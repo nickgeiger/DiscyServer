@@ -41,8 +41,9 @@ git pull
 
 
 # Deploy approved course maps
+pending_course_maps_json="app/course-maps/pending-course-maps-FPX0fvc4zkp.json"
 
-approved_courses=($(jq -r 'to_entries[] | select(.value.approved == true) | .key' archive/pending-course-maps.json))
+approved_courses=($(jq -r 'to_entries[] | select(.value.approved == true) | .key' $pending_course_maps_json))
 if ruby archive/approve-course-maps.rb; then
 
     echo "Approved course maps, committing and publishing"
@@ -104,7 +105,7 @@ git push # Dies if there were no changes pushed, like if pending changes produce
 
 
 # Notify of course IDs to approve
-to_approve=($(jq -r 'to_entries[] | select(.value.approved == false) | .key' archive/pending-course-maps.json))
+to_approve=($(jq -r 'to_entries[] | select(.value.approved == false) | .key' $pending_course_maps_json))
 echo "curl -d \"New courses to approve:
 ${to_approve}\" ntfy.sh/dg-approvals-ndnajm9xne8GKJybt"
 curl -d "New courses to approve: $dev_or_prod

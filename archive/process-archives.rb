@@ -317,10 +317,10 @@ def process_directory_structure
   json_files_failed = 0
 
   courses = parse_json_file("app/courses.json")
-  pending_course_maps_file = "archive/pending-course-maps.json"
+  pending_course_maps_file = "app/course-maps/pending-course-maps-FPX0fvc4zkp.json"
   pending_course_maps = parse_json_file(pending_course_maps_file) || {}
 
-  course_maps_pending_dir = "app/course-maps/_pending_/"
+  course_maps_pending_dir = "app/course-maps/_pending_ubp6xup0wdn_/"
   FileUtils.mkdir_p(course_maps_pending_dir)
 
   FileUtils.mkdir_p(PROCESSED_DIR)
@@ -394,9 +394,6 @@ def process_directory_structure
                 :changes => result,
                 :approved => false
               }
-
-              changes_file = "#{course_maps_pending_dir}#{course_id}.changes.json"
-              File.write(changes_file, result.to_json)
 
               puts "Queued course change: #{pending_course_file}" if V
           else

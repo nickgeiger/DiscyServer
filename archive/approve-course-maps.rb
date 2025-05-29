@@ -10,7 +10,7 @@ require 'digest'
 
 # Fetches latest server course and writes it to the local file
 def fetch_pending_course_to_file(course_id, local_file)
-  url = "https://www.nickgeiger.com/api/discy/course-maps/_pending_/#{course_id}.json"
+  url = "https://www.nickgeiger.com/api/discy/course-maps/_pending_ubp6xup0wdn_/#{course_id}.json"
   puts "Fetching #{url} to #{local_file}"
   begin
     response = URI.open(url).read
@@ -47,9 +47,9 @@ end
 # Main function to process the approved course maps
 def approve_course_maps
 
-  local_pending_dir = "app/course-maps/_pending_/"
+  local_pending_dir = "app/course-maps/_pending_ubp6xup0wdn_/"
 
-  pending_course_maps_json_file = "archive/pending-course-maps.json"
+  pending_course_maps_json_file = "app/course-maps/pending-course-maps-FPX0fvc4zkp.json"
   pending_courses = parse_json_file(pending_course_maps_json_file)
   unless pending_courses && pending_courses.length > 0
     puts "No pending courses to approve"
