@@ -1,1 +1,12 @@
-{}
+{
+  "golden-gate-park": {
+    "hash": "d4d384a57dbbb94ca9bfdd81e6323c0b",
+    "changes": {
+      "result": "course_changed",
+      "diffs": [
+        "Added initial layout"
+      ]
+    },
+    "approved": false
+  }
+}
