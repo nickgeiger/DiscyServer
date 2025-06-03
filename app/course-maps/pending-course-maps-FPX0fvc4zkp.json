@@ -1,6 +1,6 @@
 {
   "moraga-commons-park": {
-    "hash": "e745aba187e4dd5a2a6e064720e9b4bc",
+    "hash": "ac09a0fd05c71ddebd975a6ad0ff5bab",
     "changes": {
       "result": "course_and_layout_changed",
       "diffs": [
@@ -13,7 +13,7 @@
         "Layout '1' - Hole 4: teeIndex set to 1 (vs. 0)",
         "Layout '1' - Hole 4: pinIndex set to 0 (vs. 1)",
         "Layout '1' - Hole 6: pinIndex set to 2 (vs. 0)",
-        "Layout '1' - Hole 9: pinIndex set to 2 (vs. 0)"
+        "Layout '1' - Hole 9: pinIndex set to 3 (vs. 0)"
       ]
     },
     "approved": false
