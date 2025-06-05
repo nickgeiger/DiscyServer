@@ -66,7 +66,6 @@ def approve_course_maps
       # Confirm we have the file and it matches the hash
       hash = pending["hash"]
       pending_course_file = "#{local_pending_dir}#{course_id}.json"
-
       approved = File.file?(pending_course_file) && Digest::MD5.file(pending_course_file).hexdigest == hash
 
       unless approved
@@ -79,12 +78,8 @@ def approve_course_maps
 
     if approved
       puts "Approving courseId: #{course_id}"
-
       FileUtils.mv(pending_course_file, "app/course-maps/#{course_id}.json")
-      FileUtils.rm_f("#{local_pending_dir}#{course_id}.changes.json")
-
       approved_count += 1
-
     else
       unapproved_courses[course_id] = pending
     end
