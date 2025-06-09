@@ -1,2 +1,13 @@
 {
+  "golden-gate-park": {
+    "hash": "124360f649159f68496cabacd3851678",
+    "changes": {
+      "result": "course_changed",
+      "diffs": [
+        "Hole '10' Pin 'D' longitude set to -122.48443131730323 (vs. -122.484435)",
+        "Added initial layout"
+      ]
+    },
+    "approved": false
+  }
 }
