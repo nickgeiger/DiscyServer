@@ -112,8 +112,9 @@ echo "\n\n"
 if (( ${#to_approve[@]} )); then
 
     # Join the array elements with a comma
-    IFS=', ' # Set IFS to the desired delimiter (comma and space in this case)
+    IFS=',' # Set IFS to the desired delimiter
     course_ids="${to_approve[*]}" # Use "${array[*]}" to join all elements with IFS
+    course_ids=${course_ids//,/, }
     echo "Comma-separated result (using IFS) => '${course_ids}'" ## DEBUG
     # Reset IFS to its default value (important for other commands)
     unset IFS
