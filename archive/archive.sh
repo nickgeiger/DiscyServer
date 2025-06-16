@@ -16,7 +16,7 @@ fi
 if [ $dev_or_prod = "prod" ]; then
     archive_dir="discy-published-map-archives"
 else
-    archive_dir="discy-published-map-archives-wnv8FGB2ewc"
+    archive_dir="discy-published-map-archives-DEV"
 fi
 server_archive_dir="/home/nick/$archive_dir/"
 
