@@ -28,3 +28,5 @@ rsync -rv ~/Dropbox/DiscyArchives/archives/archive-1748394061 nick@nickgeiger.co
 
 # test the archiver in dev
 ./archive/archive.sh dev ~/workspace/TestPublishedMapsArchive
+
+# Do a Pull Request in GitHub to deploy: archiver-devX > main
