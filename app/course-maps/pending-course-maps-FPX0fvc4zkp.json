@@ -9,5 +9,12 @@
       ]
     },
     "approved": false
+  },
+  "saint-marys-college": {
+    "hash": "01856fe43c8040e6b2a1ad0661936b85",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
