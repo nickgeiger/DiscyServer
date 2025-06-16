@@ -88,6 +88,7 @@ ssh nick@nickgeiger.com "rm -rf ${server_archive_dir}archive-*"
 # Process the pulled archives
 echo "Processing archives in: $dir"
 files_processed=$(find $local_archive_dir* -name "*.json" -maxdepth 2 -mindepth 2 | sed "s|$local_archive_dir||g")
+echo "ruby archive/process-archives.rb $dev_or_prod $dir"
 ruby archive/process-archives.rb $dev_or_prod $dir
 
 
@@ -107,10 +108,18 @@ git push # Dies if there were no changes pushed, like if pending changes produce
 # Notify of course IDs to approve
 to_approve=($(jq -r 'to_entries[] | select(.value.approved == false) | .key' $pending_course_maps_json))
 if (( ${#to_approve[@]} )); then
+
+    # Join the array elements with a comma
+    IFS=',' # Set IFS to the desired delimiter
+    course_ids="${to_approve[*]}" # Use "${array[*]}" to join all elements with IFS
+    course_ids=${course_ids//,/, }
+    # Reset IFS to its default value (important for other commands)
+    unset IFS
+
     echo "curl -d \"New courses to approve:
-    ${to_approve}\" ntfy.sh/dg-approvals-ndnajm9xne8GKJybt"
+    ${course_ids}\" ntfy.sh/dg-approvals-ndnajm9xne8GKJybt"
     curl -d "New courses to approve: $dev_or_prod
-    ${to_approve}" ntfy.sh/dg-approvals-ndnajm9xne8GKJybt
+    ${course_ids}" ntfy.sh/dg-approvals-ndnajm9xne8GKJybt
 else
     echo "No course maps to approve"
 fi

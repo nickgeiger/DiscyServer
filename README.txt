@@ -17,10 +17,16 @@ nick@Nicks-Mac-mini ~ % crontab -l
 
 
 
-# HINTS for development
+# HOWTO do development
+
+# move to a DEV branch (archiver will do git commits)
+git checkout -b archiver-devX
+git push -u origin archiver-devX
 
 # copy some dev archives to the server to test the archiver
-rsync -rv /Dropbox/DiscyArchives/archives/archive-1748394061 nick@nickgeiger.com:/home/nick/discy-published-map-archives-DEV/
+rsync -rv ~/Dropbox/DiscyArchives/archives/archive-1748394061 nick@nickgeiger.com:/home/nick/discy-published-map-archives-DEV/
 
 # test the archiver in dev
-./archive/archive.sh dev /Users/nick/workspace/TestPublishedMapsArchive
+./archive/archive.sh dev ~/workspace/TestPublishedMapsArchive
+
+# Do a Pull Request in GitHub to deploy: archiver-devX > main
