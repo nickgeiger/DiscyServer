@@ -105,7 +105,11 @@ git push # Dies if there were no changes pushed, like if pending changes produce
 
 
 # Notify of course IDs to approve
+echo "\n\n"
+echo "to_approve=($(jq -r 'to_entries[] | select(.value.approved == false) | .key' $pending_course_maps_json))"
 to_approve=($(jq -r 'to_entries[] | select(.value.approved == false) | .key' $pending_course_maps_json))
+echo "to_approve => '${to_approve}'"
+echo "\n\n"
 if (( ${#to_approve[@]} )); then
     echo "curl -d \"New courses to approve:
     ${to_approve}\" ntfy.sh/dg-approvals-ndnajm9xne8GKJybt"
