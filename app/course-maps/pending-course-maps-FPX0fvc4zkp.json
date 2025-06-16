@@ -18,11 +18,12 @@
     "approved": false
   },
   "moraga-commons-park": {
-    "hash": "8aee9df03f5da26985087e1b0728c85e",
+    "hash": "a64a6342774959fa92277ce2be0b83c6",
     "changes": {
       "result": "course_and_layout_changed",
       "diffs": [
         "Hole '2' has 3 pins (vs. 2)",
+        "Hole '4' Pin '1' longitude set to -122.12740066812385 (vs. -122.12540066812385)",
         "Layout '1' - Hole 2: pinIndex set to 2 (vs. 0)"
       ]
     },
