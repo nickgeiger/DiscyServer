@@ -105,17 +105,13 @@ git push # Dies if there were no changes pushed, like if pending changes produce
 
 
 # Notify of course IDs to approve
-echo "\n\n"
 to_approve=($(jq -r 'to_entries[] | select(.value.approved == false) | .key' $pending_course_maps_json))
-echo "to_approve => '${to_approve[@]}'"
-echo "\n\n"
 if (( ${#to_approve[@]} )); then
 
     # Join the array elements with a comma
     IFS=',' # Set IFS to the desired delimiter
     course_ids="${to_approve[*]}" # Use "${array[*]}" to join all elements with IFS
     course_ids=${course_ids//,/, }
-    echo "Comma-separated result (using IFS) => '${course_ids}'" ## DEBUG
     # Reset IFS to its default value (important for other commands)
     unset IFS
 
