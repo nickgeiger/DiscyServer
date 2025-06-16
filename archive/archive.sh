@@ -108,13 +108,13 @@ git push # Dies if there were no changes pushed, like if pending changes produce
 echo "\n\n"
 echo "to_approve=($(jq -r 'to_entries[] | select(.value.approved == false) | .key' $pending_course_maps_json))"
 to_approve=($(jq -r 'to_entries[] | select(.value.approved == false) | .key' $pending_course_maps_json))
-echo "to_approve => '${to_approve}'"
+echo "to_approve => '${to_approve[@]}'"
 echo "\n\n"
 if (( ${#to_approve[@]} )); then
     echo "curl -d \"New courses to approve:
-    ${to_approve}\" ntfy.sh/dg-approvals-ndnajm9xne8GKJybt"
+    ${to_approve[@]}\" ntfy.sh/dg-approvals-ndnajm9xne8GKJybt"
     curl -d "New courses to approve: $dev_or_prod
-    ${to_approve}" ntfy.sh/dg-approvals-ndnajm9xne8GKJybt
+    ${to_approve[@]}" ntfy.sh/dg-approvals-ndnajm9xne8GKJybt
 else
     echo "No course maps to approve"
 fi
