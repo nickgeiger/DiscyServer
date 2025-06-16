@@ -16,5 +16,16 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "moraga-commons-park": {
+    "hash": "8aee9df03f5da26985087e1b0728c85e",
+    "changes": {
+      "result": "course_and_layout_changed",
+      "diffs": [
+        "Hole '2' has 3 pins (vs. 2)",
+        "Layout '1' - Hole 2: pinIndex set to 2 (vs. 0)"
+      ]
+    },
+    "approved": false
   }
 }
