@@ -117,5 +117,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "saint-marys-college": {
+    "hash": "7a931e8e92b2e70df46f1ae038043221",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
