@@ -54,5 +54,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "highland-springs-reservoir": {
+    "hash": "662bae04419632b1f0808a22bf3f9f5b",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
