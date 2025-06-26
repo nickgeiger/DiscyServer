@@ -26,5 +26,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "skyline-wilderness-park": {
+    "hash": "bc5e64b38556b1caa2b1088280eccee2",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
