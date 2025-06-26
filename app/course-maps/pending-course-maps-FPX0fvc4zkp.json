@@ -110,5 +110,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "hillcrest-community-park": {
+    "hash": "3a3ae86edc4ea3f107e310a5e17107e6",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
