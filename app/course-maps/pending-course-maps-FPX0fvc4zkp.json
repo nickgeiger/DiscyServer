@@ -61,5 +61,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "rocklin": {
+    "hash": "22f8f128075cd6da895abb973700a4ba",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
