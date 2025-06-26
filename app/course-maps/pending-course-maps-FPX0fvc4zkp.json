@@ -75,5 +75,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "hazel-park": {
+    "hash": "9d42ea28acbc316b460cba2ed9d652e5",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
