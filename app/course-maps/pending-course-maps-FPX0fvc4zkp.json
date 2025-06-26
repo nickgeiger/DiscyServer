@@ -54,5 +54,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "wagner-park": {
+    "hash": "a044e7937a5c67750bbdc414e9d96017",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
