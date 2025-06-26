@@ -1,2 +1,9 @@
 {
+  "seymour-lake-park": {
+    "hash": "6ae0311a01ae96270eae6d298d5372cb",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
+  }
 }
