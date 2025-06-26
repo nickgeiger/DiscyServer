@@ -33,5 +33,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "river-bends": {
+    "hash": "2eb3940b2c6349d708a1f4d6535bfb8d",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
