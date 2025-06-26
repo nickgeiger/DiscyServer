@@ -82,5 +82,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "grayling-rotary-pine-knoll": {
+    "hash": "aa0c2edfd12bff9212f61fffe0276bc1",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
