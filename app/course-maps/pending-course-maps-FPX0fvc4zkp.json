@@ -61,5 +61,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "camp-agawam": {
+    "hash": "45a7fd305acb9b64a5f049b5ac6ed9ba",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
