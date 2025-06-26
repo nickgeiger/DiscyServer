@@ -40,5 +40,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "veterans-memorial-park-warren-mi": {
+    "hash": "bca767c4f69414a0a4ce89f7dcf39005",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
