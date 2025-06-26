@@ -19,5 +19,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "walden-park-walnut-creek-ca": {
+    "hash": "1d1c961f6dbeccdb171310bd8cb3482a",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
