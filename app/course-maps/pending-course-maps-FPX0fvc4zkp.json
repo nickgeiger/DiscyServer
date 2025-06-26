@@ -89,5 +89,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "the-jungle": {
+    "hash": "44ee0ff8c325af2bcaafdd216d17d0b2",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
