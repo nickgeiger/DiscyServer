@@ -33,5 +33,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "lone-star": {
+    "hash": "b2188d7692139eddd2a2d8bfc2b63d02",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
