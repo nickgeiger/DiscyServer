@@ -26,5 +26,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "cass-benton-hills": {
+    "hash": "79ba63c9559f502452f787223d3c830c",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
