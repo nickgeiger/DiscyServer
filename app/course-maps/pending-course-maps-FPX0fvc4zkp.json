@@ -75,5 +75,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "kensington-black-locust-green": {
+    "hash": "e1068d1a70d3721e3e9f59e7b45b03df",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
