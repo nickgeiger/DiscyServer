@@ -47,5 +47,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "auburn-regional-park": {
+    "hash": "79bb31d035b3d3c203cab7a4c66f5b5a",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
