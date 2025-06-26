@@ -4,125 +4,125 @@
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   },
   "stony-creek-buckhorn-south": {
     "hash": "99fac3be8c6963e011e0a2e267466a36",
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   },
   "kensington-black-locust-blue": {
     "hash": "1e159ed8d0994a9414fb75a05ca3d023",
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   },
   "addison-oaks-county-park": {
     "hash": "5f091e54fef0056f98f0a2ff96ecc339",
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   },
   "cass-benton-hills": {
     "hash": "79ba63c9559f502452f787223d3c830c",
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   },
   "river-bends": {
     "hash": "2eb3940b2c6349d708a1f4d6535bfb8d",
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   },
   "veterans-memorial-park-warren-mi": {
     "hash": "bca767c4f69414a0a4ce89f7dcf39005",
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   },
   "hawthorne-park-pontiac-mi": {
     "hash": "8e76e3c7ff8bacf0e6a43799fd148531",
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   },
   "wagner-park": {
     "hash": "9f6491ebfb233dcb7ff3cdfc701ede57",
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   },
   "camp-agawam": {
     "hash": "45a7fd305acb9b64a5f049b5ac6ed9ba",
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   },
   "starrjaycee-park": {
     "hash": "db755188a72b0a9c2675ca3b51239063",
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   },
   "hazel-park": {
     "hash": "9d42ea28acbc316b460cba2ed9d652e5",
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   },
   "grayling-rotary-pine-knoll": {
     "hash": "aa0c2edfd12bff9212f61fffe0276bc1",
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   },
   "the-jungle": {
     "hash": "44ee0ff8c325af2bcaafdd216d17d0b2",
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   },
   "memorial-park-frankenmuth-mi": {
     "hash": "a8a1b1d7c48d48ab482f2fffc14c3f4b",
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   },
   "skinner-park": {
     "hash": "6c96796e0d7c7c635b8d04908d0f9e50",
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   },
   "hillcrest-community-park": {
     "hash": "b3e81c852f6d2dfb42bd986bb40c1397",
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   },
   "saint-marys-college": {
     "hash": "7a931e8e92b2e70df46f1ae038043221",
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   }
 }
