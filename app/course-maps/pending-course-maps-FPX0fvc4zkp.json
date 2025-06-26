@@ -19,5 +19,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "addison-oaks-county-park": {
+    "hash": "5f091e54fef0056f98f0a2ff96ecc339",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
