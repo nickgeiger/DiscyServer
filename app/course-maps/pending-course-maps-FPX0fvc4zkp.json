@@ -5,5 +5,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "aquatic-park": {
+    "hash": "c8ccdf4b5e8a1ff55e39f7c4ba5cd392",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
