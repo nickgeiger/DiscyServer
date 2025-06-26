@@ -103,5 +103,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "skinner-park": {
+    "hash": "6c96796e0d7c7c635b8d04908d0f9e50",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
