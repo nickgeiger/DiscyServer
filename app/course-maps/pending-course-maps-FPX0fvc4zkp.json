@@ -40,5 +40,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "shady-oaks-park-sacramento-orangevale-ca": {
+    "hash": "1f89efce20d93c17984584e5bbb2befe",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
