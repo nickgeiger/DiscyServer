@@ -96,5 +96,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "memorial-park-frankenmuth-mi": {
+    "hash": "a8a1b1d7c48d48ab482f2fffc14c3f4b",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
