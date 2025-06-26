@@ -1,2 +1,9 @@
 {
+  "stony-creek-buckhorn-north": {
+    "hash": "9e45133054733560e8d415c81f2eaf39",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
+  }
 }
