@@ -68,5 +68,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "bald-mountain": {
+    "hash": "47574e1ce999d93adbdf6fe36b457fdb",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
