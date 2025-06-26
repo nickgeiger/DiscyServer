@@ -47,5 +47,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "hawthorne-park-pontiac-mi": {
+    "hash": "8e76e3c7ff8bacf0e6a43799fd148531",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
