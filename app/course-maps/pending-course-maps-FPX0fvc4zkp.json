@@ -68,5 +68,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "starrjaycee-park": {
+    "hash": "db755188a72b0a9c2675ca3b51239063",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
