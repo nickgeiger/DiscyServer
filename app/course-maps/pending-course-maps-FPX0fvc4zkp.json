@@ -12,5 +12,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "kensington-black-locust-blue": {
+    "hash": "1e159ed8d0994a9414fb75a05ca3d023",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
