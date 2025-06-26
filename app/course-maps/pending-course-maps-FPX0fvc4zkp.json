@@ -5,5 +5,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "stony-creek-buckhorn-south": {
+    "hash": "99fac3be8c6963e011e0a2e267466a36",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
