@@ -6,33 +6,12 @@
     },
     "approved": false
   },
-  "aquatic-park": {
-    "hash": "69b36ddd381f6c992d1c2c3a64b8acad",
-    "changes": {
-      "result": "new_course"
-    },
-    "approved": true
-  },
   "emerald-hills": {
     "hash": "32edd17d306b9fb9c01a5100a60d353a",
     "changes": {
       "result": "new_course"
     },
     "approved": false
-  },
-  "walden-park-walnut-creek-ca": {
-    "hash": "99203bbe0c888d1dbe71868a264ac1f4",
-    "changes": {
-      "result": "new_course"
-    },
-    "approved": true
-  },
-  "skyline-wilderness-park": {
-    "hash": "5dd3eef1db47c99ebabb6f2bf74f50b0",
-    "changes": {
-      "result": "new_course"
-    },
-    "approved": true
   },
   "lone-star": {
     "hash": "b1b133b8649c17cbe73e4efa8286a3e4",
