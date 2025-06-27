@@ -1,4 +1,5 @@
-The archive should be run on a dedicated "server" (mac) with ssh and github setup as follows:
+# ARCHIVER
+# The archiver (archive/archive.sh) should be run on a dedicated "server" (mac) with ssh and github setup as follows:
 
 
 # For example, to set up the archiver in /Users/nick/archiver:
@@ -17,7 +18,7 @@ nick@Nicks-Mac-mini ~ % crontab -l
 
 
 
-# HOWTO do development
+# HOWTO do archiver development
 
 # move to a DEV branch (archiver will do git commits)
 git checkout -b archiver-devX
@@ -30,3 +31,33 @@ rsync -rv ~/Dropbox/DiscyArchives/archives/archive-1748394061 nick@nickgeiger.co
 ./archive/archive.sh dev ~/workspace/TestPublishedMapsArchive
 
 # Do a Pull Request in GitHub to deploy: archiver-devX > main
+
+
+
+# COURSES
+# Add/Edit Course(s)
+
+# move to main to get & deploy latest when done with add/edit
+git checkout main
+
+# edit course-data/course-changes.json with course changes (adds or edits)
+
+# run the script to apply the changes
+./course-data/update-courses.sh
+
+# commit & deploy
+git commit -am "added course XYZ"
+git push
+./deploy/deploy-app.sh prod
+
+
+
+# DEPLOY (if deploying to prod ensure you're on main branch and up-to-date)
+
+# Entire app
+./deploy/deploy-app.sh dev|prod
+
+# Just the course maps
+./deploy/deploy-course-maps.sh dev|prod
+
+
