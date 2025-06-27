@@ -50,6 +50,7 @@ git commit -am "added course XYZ"
 git push
 ./deploy/deploy-app.sh prod
 
+# Also, be sure to copy the latest courses.json to the iOS app!!
 
 
 # DEPLOY (if deploying to prod ensure you're on main branch and up-to-date)
