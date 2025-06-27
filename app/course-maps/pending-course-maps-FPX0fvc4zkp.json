@@ -5,5 +5,12 @@
       "result": "new_course"
     },
     "approved": false
+  },
+  "northridge-church": {
+    "hash": "630892af41963e5a5f29e00d385a5546",
+    "changes": {
+      "result": "new_course"
+    },
+    "approved": false
   }
 }
