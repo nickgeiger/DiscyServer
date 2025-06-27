@@ -4,13 +4,13 @@
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   },
   "northridge-church": {
     "hash": "9bd9830a2b0a9d668ae150c6c053d9d9",
     "changes": {
       "result": "new_course"
     },
-    "approved": false
+    "approved": true
   }
 }
